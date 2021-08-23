@@ -1,0 +1,167 @@
+---
+title: "Web Scraper"
+output: html_notebook
+---
+
+
+
+```{r}
+install.packages("rvest")
+
+
+library("rvest")
+
+packages = c('rmarkdown', 'plyr', 'dplyr','ggplot2', 'readr', 'tidyr', 'stringr',  'knitr', 'sparklyr', 'shiny', 'data.table', 'zoo','fasttime',"twitteR","openssl","httpuv" , 'rvest', 'httr','jsonlite','lubridate', 'twitteR')
+
+package.check <- lapply(packages, FUN = function(x) {
+    if (!require(x, character.only = TRUE)) {
+        install.packages(x, dependencies = TRUE)
+        library(x, character.only = TRUE, quietly = TRUE, warn.conflicts = FALSE)
+    }
+})
+
+
+```
+
+```{r}
+
+volume <- 25
+
+issue <- 9 
+
+nsmb <- read_html(paste0("https://www.nature.com/nsmb/volumes/",volume,"/issues/",issue))
+
+#nsmb <- read_html("https://www.nature.com/nsmb/volumes/25/issues/10") 
+
+```
+
+```{r artcile title}
+
+loop_list <- 1:20
+
+nsmb_test <- as.character()
+nsmb_test_link <- as.character()
+
+
+for (loop in loop_list){
+  #article title
+nsmb_node <-  nsmb %>% html_node(paste0(".pb30:nth-child(",loop,") a")) %>% html_text()  %>% 
+        # Trim additional white space
+        str_trim() %>%                       
+        # Convert the list into a vector
+        unlist()
+
+nsmb_t0 <- str_trim(sapply(strsplit(nsmb_node, "\n"), "[", 1)) 
+
+nsmb_test <- rbind(nsmb_test, nsmb_t0)
+
+
+# article link
+nsmb_node_link <-  nsmb %>% html_node(paste0(".pb30:nth-child(",loop,") a")) %>% html_attr('href')  %>% 
+        # Trim additional white space
+        str_trim() %>%                       
+        # Convert the list into a vector
+        unlist()
+
+nsmb_t0_link <- str_trim(nsmb_node_link) 
+
+nsmb_test_link <- rbind(nsmb_test_link, nsmb_t0_link)
+
+
+
+}
+
+nsmb2_link <- nsmb_test_link %>% data.frame() %>% transmute(link = (paste0("https://www.nature.com",.)))
+row.names(nsmb2_link) <- NULL
+
+nsmb2 <- nsmb_test %>% data.frame() %>% dplyr::rename(.,"title" = ".")
+row.names(nsmb2) <- NULL
+
+nchar(as.character(nsmb2$title))
+
+nsmb3 <- cbind(nsmb2,nsmb2_link,issue,volume) %>% mutate(nchar_title = nchar(as.character(title)),
+                                            nchar_link  = nchar(link),
+                                            nchar_total = nchar(as.character(title)) + nchar(link))
+
+
+nsmb4 <- nsmb3 %>% mutate(hashtag = "#structuralbio #nsmb #biophysics @nature @NatureSMB",
+                          tweet_text = paste0(hashtag," ",link),
+                          nchar_tweet = nchar(as.character(tweet_text))) %>%
+                   filter(is.na(title) != T)
+
+rm(loop, loop_list, nsmb_test,nsmb_t0, nsmb_node, nsmb_node_link, nsmb_t0_link, nsmb_test_link, nsmb2_link, nsmb2, nsmb3)
+```
+
+
+
+
+```{r setting up twitter API}
+#Install and load the appropriate packages
+
+#REPLACE '####' with the appropriate values from your twitter app
+consumerKey='3K2rYYAfJhYrGq94BozMgvsCI'
+consumerSecret='IbaHNR6I8BC0Kj4jyMZU9p0WqsejLPck0JPYYlb3asEcU9H4mA'
+accessToken='1056297361641750528-Dmr1S0p8M7pT4rxRU3tyIVKXkyn4QX'
+accessTokenSecret= 'Oi814IcfDf9gjpDvYyPdQdM9PEVztbmSUW2J2kJUIu12U'
+
+#Connect to twitter
+origop <- options("httr_oauth_cache")
+options(httr_oauth_cache = TRUE)
+
+setup_twitter_oauth(consumerKey,consumerSecret,accessToken,accessTokenSecret)
+
+#Post Tweet !
+#tweet("Hello Twitter")
+```
+
+```{r tweet}
+loop_list <- 2:8
+
+
+nsmb4b <- nsmb4 #%>% head(.,1)
+
+for (loop in loop_list){
+loopdat <- nsmb4b %>% filter(row_number() == loop)
+
+#tweet(loopdat$tweet_text)  
+
+}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

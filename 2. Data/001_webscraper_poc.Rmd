@@ -80,6 +80,25 @@ nsmb %>% html_node(paste0(".pb30:nth-child(7) a")) %>% html_text2()
 
 
 
+```{r }
+
+#function to pull out subjournal, volume and issue information
+
+subjournal <- "nsmb"
+
+subjournal_html_parser <- function(subjournal,volume,issue,child_node) {
+          tmp_html <- read_html(paste0("https://www.nature.com/",subjournal,"/volumes/",volume,"/issues/",issue))
+          
+          
+          # parse html text
+          tmp_html %>% html_node(paste0(".pb30:nth-child(",child_node,") a")) %>% html_text2()
+}
+
+
+subjournal_html_parser(subjournal = "nsmb",volume = 1,issue = 1,child_node = 7) 
+
+
+```
 
 
 

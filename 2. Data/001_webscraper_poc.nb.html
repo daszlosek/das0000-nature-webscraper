@@ -217,12 +217,8 @@ pre code {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcInJ2ZXN0XCIpXG5cbiN0ZXN0XG5saWJyYXJ5KFwicnZlc3RcIilcblxucGFja2FnZXMgPSBjKCdybWFya2Rvd24nLCAncGx5cicsICdkcGx5cicsJ2dncGxvdDInLCAncmVhZHInLCAndGlkeXInLCAnc3RyaW5ncicsICAna25pdHInLCAnc3BhcmtseXInLCAnc2hpbnknLCAnZGF0YS50YWJsZScsICd6b28nLCdmYXN0dGltZScsXCJ0d2l0dGVSXCIsXCJvcGVuc3NsXCIsXCJodHRwdXZcIiAsICdydmVzdCcsICdodHRyJywnanNvbmxpdGUnLCdsdWJyaWRhdGUnLCAndHdpdHRlUicpXG5cbnBhY2thZ2UuY2hlY2sgPC0gbGFwcGx5KHBhY2thZ2VzLCBGVU4gPSBmdW5jdGlvbih4KSB7XG4gICAgaWYgKCFyZXF1aXJlKHgsIGNoYXJhY3Rlci5vbmx5ID0gVFJVRSkpIHtcbiAgICAgICAgaW5zdGFsbC5wYWNrYWdlcyh4LCBkZXBlbmRlbmNpZXMgPSBUUlVFKVxuICAgICAgICBsaWJyYXJ5KHgsIGNoYXJhY3Rlci5vbmx5ID0gVFJVRSwgcXVpZXRseSA9IFRSVUUsIHdhcm4uY29uZmxpY3RzID0gRkFMU0UpXG4gICAgfVxufSlcblxuXG5gYGAifQ== -->
-<pre class="r"><code>install.packages(&quot;rvest&quot;)
-
-#test
-library(&quot;rvest&quot;)
-
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5wYWNrYWdlcyA9IGMoJ3JtYXJrZG93bicsICdwbHlyJywgJ2RwbHlyJywnZ2dwbG90MicsICdyZWFkcicsICd0aWR5cicsICdzdHJpbmdyJywgICdrbml0cicsICdzcGFya2x5cicsICdzaGlueScsICdkYXRhLnRhYmxlJywgJ3pvbycsJ2Zhc3R0aW1lJyxcInR3aXR0ZVJcIixcIm9wZW5zc2xcIixcImh0dHB1dlwiICwgJ3J2ZXN0JywgJ2h0dHInLCdqc29ubGl0ZScsJ2x1YnJpZGF0ZScsICd0d2l0dGVSJylcblxucGFja2FnZS5jaGVjayA8LSBsYXBwbHkocGFja2FnZXMsIEZVTiA9IGZ1bmN0aW9uKHgpIHtcbiAgICBpZiAoIXJlcXVpcmUoeCwgY2hhcmFjdGVyLm9ubHkgPSBUUlVFKSkge1xuICAgICAgICBpbnN0YWxsLnBhY2thZ2VzKHgsIGRlcGVuZGVuY2llcyA9IFRSVUUpXG4gICAgICAgIGxpYnJhcnkoeCwgY2hhcmFjdGVyLm9ubHkgPSBUUlVFLCBxdWlldGx5ID0gVFJVRSwgd2Fybi5jb25mbGljdHMgPSBGQUxTRSlcbiAgICB9XG59KVxuXG5cbmBgYCJ9 -->
+<pre class="r"><code>
 packages = c(&#39;rmarkdown&#39;, &#39;plyr&#39;, &#39;dplyr&#39;,&#39;ggplot2&#39;, &#39;readr&#39;, &#39;tidyr&#39;, &#39;stringr&#39;,  &#39;knitr&#39;, &#39;sparklyr&#39;, &#39;shiny&#39;, &#39;data.table&#39;, &#39;zoo&#39;,&#39;fasttime&#39;,&quot;twitteR&quot;,&quot;openssl&quot;,&quot;httpuv&quot; , &#39;rvest&#39;, &#39;httr&#39;,&#39;jsonlite&#39;,&#39;lubridate&#39;, &#39;twitteR&#39;)
 
 package.check &lt;- lapply(packages, FUN = function(x) {
@@ -237,7 +233,49 @@ package.check &lt;- lapply(packages, FUN = function(x) {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudm9sdW1lIDwtIDFcblxuaXNzdWUgPC0gMVxuXG5uc21iIDwtIHJlYWRfaHRtbChwYXN0ZTAoXCJodHRwczovL3d3dy5uYXR1cmUuY29tL25zbWIvdm9sdW1lcy9cIix2b2x1bWUsXCIvaXNzdWVzL1wiLGlzc3VlKSlcblxuI25zbWIgPC0gcmVhZF9odG1sKFwiaHR0cHM6Ly93d3cubmF0dXJlLmNvbS9uc21iL3ZvbHVtZXMvMjUvaXNzdWVzLzEwXCIpIFxuXG5uc21iXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5uc21iIDwtIHJlYWRfaHRtbChcImh0dHBzOi8vd3d3Lm5hdHVyZS5jb20vbnNtYi92b2x1bWVzLzI1L2lzc3Vlcy8xMFwiKSBcblxuYGBgIn0= -->
+<pre class="r"><code>
+nsmb &lt;- read_html(&quot;https://www.nature.com/nsmb/volumes/25/issues/10&quot;) 
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5cbm5zbWIgJT4lIHJ2ZXN0OjpodG1sX3RleHQoKVxuXG5gYGAifQ== -->
+<pre class="r"><code>
+
+nsmb %&gt;% rvest::html_text()
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnNtYiAlPiUgaHRtbF9ub2RlKHBhc3RlMChcIi5wYjMwOm50aC1jaGlsZCg3KSBhXCIpKSAlPiUgaHRtbF90ZXh0KClcblxuYGBgIn0= -->
+<pre class="r"><code>nsmb %&gt;% html_node(paste0(&quot;.pb30:nth-child(7) a&quot;)) %&gt;% html_text()
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiXFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIFhMRiBhbmQgQVBMRiBiaW5kIEt1ODAgYXQgdHdvIHJlbW90ZSBzaXRlcyB0byBlbnN1cmUgRE5BIHJlcGFpciBieSBub24taG9tb2xvZ291cyBlbmQgam9pbmluZ1wiXG4ifQ== -->
+<pre><code>[1] &quot;\n                            XLF and APLF bind Ku80 at two remote sites to ensure DNA repair by non-homologous end joining&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyB0ZXN0aW5nIGNsZWFuaW5nIHVwIHRleHRcbm5zbWIgJT4lIGh0bWxfbm9kZShwYXN0ZTAoXCIucGIzMDpudGgtY2hpbGQoNykgYVwiKSkgJT4lIGh0bWxfdGV4dDIoKVxuXG5gYGAifQ== -->
+<pre class="r"><code># testing cleaning up text
+nsmb %&gt;% html_node(paste0(&quot;.pb30:nth-child(7) a&quot;)) %&gt;% html_text2()
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiWExGIGFuZCBBUExGIGJpbmQgS3U4MCBhdCB0d28gcmVtb3RlIHNpdGVzIHRvIGVuc3VyZSBETkEgcmVwYWlyIGJ5IG5vbi1ob21vbG9nb3VzIGVuZCBqb2luaW5nXCJcbiJ9 -->
+<pre><code>[1] &quot;XLF and APLF bind Ku80 at two remote sites to ensure DNA repair by non-homologous end joining&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudm9sdW1lIDwtIDFcblxuaXNzdWUgPC0gMVxuXG5uc21iIDwtIHJlYWRfaHRtbChwYXN0ZTAoXCJodHRwczovL3d3dy5uYXR1cmUuY29tL25zbWIvdm9sdW1lcy9cIix2b2x1bWUsXCIvaXNzdWVzL1wiLGlzc3VlKSlcblxuI25zbWIgPC0gcmVhZF9odG1sKFwiaHR0cHM6Ly93d3cubmF0dXJlLmNvbS9uc21iL3ZvbHVtZXMvMjUvaXNzdWVzLzEwXCIpIFxuXG5uc21iXG5cblxubnNtYiAlPiUgaHRtbF9ub2RlKHBhc3RlMChcIi5wYjMwOm50aC1jaGlsZChcIiw5LFwiKSBhXCIpKSAlPiUgaHRtbF90ZXh0KClcblxuYGBgIn0= -->
 <pre class="r"><code>volume &lt;- 1
 
 issue &lt;- 1
@@ -246,22 +284,22 @@ nsmb &lt;- read_html(paste0(&quot;https://www.nature.com/nsmb/volumes/&quot;,vol
 
 #nsmb &lt;- read_html(&quot;https://www.nature.com/nsmb/volumes/25/issues/10&quot;) 
 
-nsmb</code></pre>
+nsmb
+
+
+nsmb %&gt;% html_node(paste0(&quot;.pb30:nth-child(&quot;,9,&quot;) a&quot;)) %&gt;% html_text()
+</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoie2h0bWxfZG9jdW1lbnR9XG48aHRtbCBsYW5nPVwiZW5cIiBjbGFzcz1cImdyYWRlLWNcIj5cblsxXSA8aGVhZD5cXG48bWV0YSBodHRwLWVxdWl2PVwiQ29udGVudC1UeXBlXCIgY29udGVudD1cInRleHQvaHRtbDsgY2hhcnNldD1VVEYtOFwiPlxcbjx0aXRsZT5Wb2x1bWUgMSBJc3N1ZSAxLCBKYW51YXJ5IDE5OTQ8XC90aXRsZT5cXG48IC4uLlxuWzJdIDxib2R5IGNsYXNzPVwiaXNzdWUtcGFnZSBiYWNrZ3JvdW5kLXdoaXRlXCI+XFxuPCEtLTwhW2VuZGlmXS0tPlxcblxcbjxub3NjcmlwdD48aWZyYW1lIHNyYz1cImh0dHBzOi8vd3d3Lmdvb2dsZXRhZ21hbmFnZXIuY29tL25zLmh0IC4uLlxuIn0= -->
-<pre><code>{html_document}
-&lt;html lang=&quot;en&quot; class=&quot;grade-c&quot;&gt;
-[1] &lt;head&gt;\n&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;\n&lt;title&gt;Volume 1 Issue 1, January 1994&lt;/title&gt;\n&lt; ...
-[2] &lt;body class=&quot;issue-page background-white&quot;&gt;\n&lt;!--&lt;![endif]--&gt;\n\n&lt;noscript&gt;&lt;iframe src=&quot;https://www.googletagmanager.com/ns.ht ...</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5uYXR1cmVfYXJ0aWNsZV9leHRyYWN0b3IgPC0gZnVuY3Rpb24odm9sdW1lLGlzc3VlKSB7XG4gICAgICAgICAgIG5zbWIgPC0gcmVhZF9odG1sKHBhc3RlMChcImh0dHBzOi8vd3d3Lm5hdHVyZS5jb20vbnNtYi92b2x1bWVzL1wiLHZvbHVtZSxcIi9pc3N1ZXMvXCIsaXNzdWUpKVxuXG59XG5cbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5zdWJqb3VybmFsIDwtIFwibnNtYlwiXG5cbm5hdHVyZV9hcnRpY2xlX2V4dHJhY3RvciA8LSBmdW5jdGlvbih2b2x1bWUsaXNzdWUpIHtcbiAgICAgICAgICAgbnNtYiA8LSByZWFkX2h0bWwocGFzdGUwKFwiaHR0cHM6Ly93d3cubmF0dXJlLmNvbS8sXCIsc3Viam91cm5hbCxcIiwvdm9sdW1lcy9cIix2b2x1bWUsXCIvaXNzdWVzL1wiLGlzc3VlKSlcblxufVxuXG5gYGAifQ== -->
 <pre class="r"><code>
+subjournal &lt;- &quot;nsmb&quot;
+
 nature_article_extractor &lt;- function(volume,issue) {
-           nsmb &lt;- read_html(paste0(&quot;https://www.nature.com/nsmb/volumes/&quot;,volume,&quot;/issues/&quot;,issue))
+           nsmb &lt;- read_html(paste0(&quot;https://www.nature.com/,&quot;,subjournal,&quot;,/volumes/&quot;,volume,&quot;/issues/&quot;,issue))
 
 }
 </code></pre>
@@ -270,175 +308,92 @@ nature_article_extractor &lt;- function(volume,issue) {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSB4IDddIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxU1FVK0RNQmd0RTBhR2NacjRCL0M0dzBDbU8rakZ4SG55Wk5URGJxYnJPbWpXdFV0Ym5Qdlgvb0xwMTBFTmxnVDQzdnUrMTc1WGVIMmEzeVR6QkNGMGdzSUFuaEdVcUQ5N0tTYlRDVUpoRDFDQVFqU3c3eS9vWDBJUnczM1JhVnk5VnpTZFZWaVVUSlRwbTFFMU1iV2lxVnlsajB4eVdlNDl3YWd5WnF2djgzeTMyMlVDMitHTXlFMk9sV0dFVTUwTHZiZ3U3bTdIQlF3UHJmRGhHN25MeDJmSGhjRkZweDUxNm1jdlJpVHdodXJXVWV4SXd3eW5MUWc1RTJ2WFlGclhydEgvbEx6ZU9IUXFTSVhWUjFlWk5GUkg3NGFrd2R3ek1sRFNwbS9NT0xlQjc1WndySjFiUnlaTGJIQzJVcUFGZFBBa3Nkd2FKZ1dJZXZaclJaNDRVQjV4WGd2cllqa21WUzNXNDZuZG9IV0QvanY3cStObXk5NVB1MVRrRG9qYWY4Q2RSc1R4Z3ZJV0RDSHRNV3kyVlV3WWx3UlluVFduMHpKRWNzY2NzNkhETDhqS1l3bWxBZ0FBIn0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["link"],"name":[2],"type":["chr"],"align":["left"]},{"label":["issue"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["volume"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["nchar_title"],"name":[5],"type":["int"],"align":["right"]},{"label":["nchar_link"],"name":[6],"type":["int"],"align":["right"]},{"label":["nchar_total"],"name":[7],"type":["int"],"align":["right"]}],"data":[{"1":"The Changing Structure of Biology","2":"https://www.nature.com/articles/nsb0194-1","3":"1","4":"1","5":"33","6":"41","7":"74"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSB4IDddIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUXkwN0RNQkIwUXRLb1FSU2svZ0RYSHByUVFnOGdKQTd3QVFndXZTSEhOY1NxWTBkK0VQaHJ2cUN3ZWJnS2pwUmtaM2JIbnAyWHArMTF1azBSUWljb0N1QWJRNGttajgrcjlXYU5VQlFDQ2xDRXB1My9DL3B6S0JKNEwwYU4rU3RuZFUzVjk2VzJoVFlLRzZxOWtVVnBUSzN2OHJ4cG1reGdZeFhOaUt4eXJBd2puT3BjNk9KcWRYdXozTUR3ckJVKy9DRDMrUGlzT3hqdUhkV0xVWDN2R1k4RnJvNk9Fa2NhWmpnZFFNU1oyTHNHMDlxNnh1UlRjbHM1ZENwSWlkWGJXSm4yMUVqdmhxVEIzRE15VmJMZHZqZmozQWErVzhLeDl2TkxkOWpnN0YyQkZ0REJreVN5Tmt3S0VJVnRKckVuRHBSSG5GdlJ1dGd0U1duRnZzczhIZHlnLzg2T2RkSmZHZjRPUjhVdUlDbyttSEJweEJ3WGxBOWdCdHQyeTJhMVlzSzRUWURWV1ovT3dCREpIZFB0aGc1L09SeTNVSmNDQUFBPSJ9 -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["link"],"name":[2],"type":["chr"],"align":["left"]},{"label":["issue"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["volume"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["nchar_title"],"name":[5],"type":["int"],"align":["right"]},{"label":["nchar_link"],"name":[6],"type":["int"],"align":["right"]},{"label":["nchar_total"],"name":[7],"type":["int"],"align":["right"]}],"data":[{"1":"Slippery substrates","2":"https://www.nature.com/articles/nsb0194-5","3":"1","4":"1","5":"19","6":"41","7":"60"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSB4IDddIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUlBVL0RNQkIxU3RLb1FSUWtScGF1SFpyUVFpVmdZYURxakppNklUY3h4S3B6am15SDhMUDVCUzJYRDZQZ1NFbnV2YnZuZTNkKzIrenVvbDFFQ0RranZvZmZBRU15Zm5sZHJ0WXJRdndSSW8vNFpOTDh2ekYvalVHSTc5VWdjYk9WcXFZcW14azVNem1iYlN2SWFNSEFVS0dkMG5sdVRLbWZrcVN1Nnhpb3FSU0xVMWtrVkJtZUNxWVQwUHZiNWVQOTRnR0xwNDN3K1lmWXg4VVg3Y0hZZnhEUEIvSEdHU0FBZEdVZGhaWTAzQWpXQTE5d09OZ0UxN3F5aWZHWEZGVmgwVG1rT1ZYdlEyWFVVUU85TFpLNEJzZklSTWxtK3M2TWRldTVibE5CdGJ1L0tLT0d4aDhLdFlpT2ppU1VwZUVTVURScTdpbHd4SjV5aU1zS0doZlpJczByT0N6V1RZUGVEZm52N0M4T3U1YWpVMzlVWUJmRTRKT0QzVVlnNko2SkhreHgybmJZdUZRY2pKMEVXUjEzMittWlZBckx0TE9SNHkvcEZKbm1ud0lBQUE9PSJ9 -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["link"],"name":[2],"type":["chr"],"align":["left"]},{"label":["issue"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["volume"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["nchar_title"],"name":[5],"type":["int"],"align":["right"]},{"label":["nchar_link"],"name":[6],"type":["int"],"align":["right"]},{"label":["nchar_total"],"name":[7],"type":["int"],"align":["right"]}],"data":[{"1":"Forward to the Fundamentals","2":"https://www.nature.com/articles/nsb0194-8","3":"1","4":"1","5":"27","6":"41","7":"68"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSB4IDddIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUjNVNkRNQmd0RTBhR2NacjRBbHlhSllQOU9CTzk4VUlmd015YjNabXU2NlJaYVVsYm5MNjFUekQ5Q3RSZ1NZRHZuSytuUGVmcitubXpURFlKUXVnTWhRRjhJeWpSOE9sbHZsZ3RFQW9IZ0FJVW9wSDlmMEwvR29vWTNxdGU0K1pWOHRvd0tWSnRWRTFNcldncTl5bXVKUGt5a2hSS2xqVGRydTRXbm01U0dGUHBoencvSG8rWndGYVhFVm5tV0JsR09OVzUwTnZaL1A1MnVwekI2ckZWUG40ajkvajRvdGtaM1BUcVNhOWVlM0VpZ1V1cU8wdXhJdzB6bkhZZzVFd2NYSU5wWGJ2RzhBTUNsdzZkQzFKZzlkWlhKaTNWMDd0RjBtRHVHUmtwYWVPM1pwemJ3SGRMT05iT3JTT1RIVFk0Mnl2UUFqcDVrbGhXOWxKQU5MQzNGbm5pUUhuRVpTMnNpOTJVRkxVNFRGZjJnTTROK3Uvc3I0N2JJd2MvM1ZhUkd4QVY3MHk0YVVRY2J5bnZ3QmpTTm1HelNqRmhYQkpnZGRaT3AyT0k1STVwc3FIVEw5RklvcUN0QWdBQSJ9 -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["link"],"name":[2],"type":["chr"],"align":["left"]},{"label":["issue"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["volume"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["nchar_title"],"name":[5],"type":["int"],"align":["right"]},{"label":["nchar_link"],"name":[6],"type":["int"],"align":["right"]},{"label":["nchar_total"],"name":[7],"type":["int"],"align":["right"]}],"data":[{"1":"Solution structure of apocytochrome b562","2":"https://www.nature.com/articles/nsb0194-30","3":"1","4":"1","5":"40","6":"42","7":"82"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSB4IDddIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUlcwN0RNQkIwU3RLb1FSUWtMdUR2U2sxb1M1RkFRZ2pCQVJCZi9VTnU2clJXblhYa0I0VmJjNEtDODNBVkhDbkp6dXpPZW5iOS9ycGFKS3NFSVhTR3dzQitJeHVpNGN2YmJMNmNJeFFPTEFwUWlFYjEvOHZtcjIwUTIvZXFsM2g4Qm16QUtFTTRYaHZKNkFaWGdoT0pjMjZVcGhJendBUVhwR1Q4RzRzQ0Z3YTJ0cFN6aWlpcXZHYVRuZGFWZXNpeXcrR1FBdEZHMGpRWFpVYWtaam1uS2dPMXZwbmQzMDRYZDdaNlhDdWZmcEI3Zkh6UmRMWVdlL0drRjIrOUdTTWc1Y2xTN0VqTk5LY2RDRG1EdlVzd3BZeExERDhGTjZWRDU1RHZpUHpvSzVPVzZ1bGRrZENFZTBaR1V0VGp0MmFjMjhCM20zT2kvQVVtRzZKSldraXJ0ZWpvU1dKUmFTYkFpZ2IxVlVhZU9KQWVjV21nZHJHWjVqc0QrK215UHFCemcvNDdPOFZ4ZStUZ3Qyc1Z1UVZSMkRKdzI0ZzRXVlBlZ2JHZHRoazJyU1FEN1NheHJFcmI3WFJNTHJoam10blE4USt1Wko2Q3dnSUFBQT09In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["link"],"name":[2],"type":["chr"],"align":["left"]},{"label":["issue"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["volume"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["nchar_title"],"name":[5],"type":["int"],"align":["right"]},{"label":["nchar_link"],"name":[6],"type":["int"],"align":["right"]},{"label":["nchar_total"],"name":[7],"type":["int"],"align":["right"]}],"data":[{"1":"An unusual buried polar cluster in a family of fungal lipases","2":"https://www.nature.com/articles/nsb0194-36","3":"1","4":"1","5":"61","6":"42","7":"103"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSB4IDddIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxU1MwN0RNQkIxU3RLb1FSUWtMdUIxcFNhMHRCS3dZUUdiN2hCaTBSMXlFNWRZZGV6SWR0b3Vld0ZXM0pBVGNJTEM1T01xSkZLU2VXODhNKzlOOHZxOHZBMldBVUxvRExrT1BEMElVZi9wWlRLZFR4RnllNEFjNUtKQitkNUQvaG9DSCs2cktvRU9aWUsrcFJRellVaHNNQkVKamprbFc1cmd0TWlJQU1Zd2t5cVpyWmpBaThVQ3h6TExPZDFqb2pIQm1Vd294MnVwc0tZcVorTDc4SlVyYVNnVFJGZE5xWUsyVEFwOUdscXJHYVhHNVBvaGluYTdYU2lJS1JRTm9YTkVsR0VnUUVkQ3IyNG05N1B4N0E1T0Q4dkt4eDlrcnk2K3FPMmd1QldQV3ZGblp4ZWVJQm0xa254TGdsRk9HK0J5SmpZMndiUXViS0svbGJ6SUxEb1hjVXJVZTdzeXFLbFd2VDBrRGVFZElRTWxTL3UxR0t2VzZhcU5PZEhkQlFZSk1TUmNLNmdGZE95VStESnZ0dDRyUDduWEtYWlVoN2dzUktraUdjZHBJVGJqZVRtZ1VZUCtLenZGZmoyeTk5dTA4dXlDcVBoZ3dtN0Q0MlJGZVFPRzRMWXlHK1lLL2czckJGZ2QxdHRwbUZoeXkxVGUwUEVQYmFaNkx1b0NBQUE9In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["link"],"name":[2],"type":["chr"],"align":["left"]},{"label":["issue"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["volume"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["nchar_title"],"name":[5],"type":["int"],"align":["right"]},{"label":["nchar_link"],"name":[6],"type":["int"],"align":["right"]},{"label":["nchar_total"],"name":[7],"type":["int"],"align":["right"]}],"data":[{"1":"The intact and cleaved human antithrombin III complex as a model for serpin–proteinase interactions","2":"https://www.nature.com/articles/nsb0194-48","3":"1","4":"1","5":"99","6":"42","7":"141"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSB4IDddIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUjBVNkRNQlF0RTBhR2NacjRBMzFlTW5EVFBlakxZdlFEakU5N014Zm9SclB1ZG1tTGMzL3RGMHpMb0FaTEF0eHpicy9sbk12NzYrbytXU1dFa0FzU0J2WVoyWklNWDk1bTg4V2NrSEJnVVVCQ01tcmVYN1ovYTR2WTNqZTl4dklaUWNpTnJEWGxXUEdjRzZrMGxXdktCR2dEbXRGU1VwU0dnampBVWRPY1kwbkJhY1RSR3plcGpObnJweXc3SEE0cGdxa1ZTd3U1eTBBWlhnaW1NOVQ1M2V6eFlicFkyTlBqUnJuOEp1N3k4ZFY1c2pYWnF5ZTltbnNwSTRRZDA1MmwySkdHRzhFNkVBcU9XOWZnV3RldU1meVVvdDQ1ZElsRkJlcWpyMHhhcXFkM2g2UUI0UmtaS2RuRWI4MDR0NEh2dHJBcmRtNGRtWlJnSUYwcnE3WG81RWxpdVRkY29oVU5tcDhaZWVKQWVjUjFqWTJMY2xwVU5XNm56YzZUemczNTcreXZqdHRQRG42NlVaRmJFTU1OUjdlTlNFRE9SQWZHTnUwNWJMcFhISTFMWWxtZHR0dnBtRUlLeDV5emtkTXZNbnlEQ3NRQ0FBQT0ifQ== -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["link"],"name":[2],"type":["chr"],"align":["left"]},{"label":["issue"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["volume"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["nchar_title"],"name":[5],"type":["int"],"align":["right"]},{"label":["nchar_link"],"name":[6],"type":["int"],"align":["right"]},{"label":["nchar_total"],"name":[7],"type":["int"],"align":["right"]}],"data":[{"1":"Analogous inhibitors of elastase do not always bind analogously","2":"https://www.nature.com/articles/nsb0194-55","3":"1","4":"1","5":"63","6":"42","7":"105"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSB4IDddIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUlFVN0RNQkIwU3RLb1FSUWtQdUJ6cFNhMGtFTzVjSUFIUUxuMGh0elViYXc2ZG1WdmFDc3VYSGdaSCtJRkJidUpxNUJJU1habVBkbVp6ZlJwZGh2TklvVFFHZkk5OHd4TWlicVB6Nk54T2tiSTd4amtJUi8xN0h0bit0ZW1DTTE5ZFd5Z1Q5dVlQcXE5QnNLeEJsVm1VQ3FLNVJKRFRuRXV1UVM1WTBMaXBaSUZmczNaaW5KTzhHS3ZxUUNxR0tHWUFCN0hLZjcrd29wcXlVdGdVcHdtVktNSE9jQkczeWZKZHJ1TkJiRWo0a3dXQ1ZIQU1rNTFJdlQ4WmpTNUc2WVRjN3B2bFE4L3lGMXRmRkY1UnkrTmV0Q29QMXJCQTBFS3FtdExvU09CQWFjMThEa1RhOWRnV3BldTBYMDNnUXFIemtXV0UvWFdWRVlWMWRDN1E5SnN0R1drcDZTTlg1bHhicjIyMjR3VDdkdzZNbG9RSVBGU0dhMUJoNVlrbEJ1N2RDUHEyUDhidE1TZWFoR1hwYkF1RnNNc0w4VjZtTm9CdFJ2MDM5bXBEcXVSbmQvNlU0RmJFQlVySnR3MkFrN21sTmVnYjlJZXc4WWJ4UVM0SkliVmNiV2Rtc2trZDh3eEd6cjhBUUJmYnkvWEFnQUEifQ== -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["link"],"name":[2],"type":["chr"],"align":["left"]},{"label":["issue"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["volume"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["nchar_title"],"name":[5],"type":["int"],"align":["right"]},{"label":["nchar_link"],"name":[6],"type":["int"],"align":["right"]},{"label":["nchar_total"],"name":[7],"type":["int"],"align":["right"]}],"data":[{"1":"Crystal structure of the holotoxino from Shigella dysenteriae at 2.5 Å resolution","2":"https://www.nature.com/articles/nsb0194-59","3":"1","4":"1","5":"81","6":"42","7":"123"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSB4IDddIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUlMwN0RNQlIwU2tMVUlBb1NGOGk2VWhOYUtCSnNRTUFCRUd5NlE2N3JOcWFPWGZuVEFLdmVnUnR5QWs1UXNKdTRDbzZVNU0wOGp6M3ovUHc0dVVnbUNRRGdBSVNCK1VhbUJJY1BUOFBSZUFSQTJERW9BQ0hvMnYrNzZaK1pJamJ2NmE0Qk5yWngvMEpLVGFFaW5LVjhubUwyK1ZIaTc4MlgxRk9wQkZUWVVJaHJwckJJSzZLS2RHRzRXUXFSSW11Y1NxS3czTzlZSDlVdmxGckptenl2cWlwalVHbUJNOFRMSEFwRkVNVXlaM0o2UHJ5K0hGeU56ZXFlVmQ3K0FQZjQrTGoyQ3U1YWRiOVZ2M2xCSXdiTHZhWFlrWW9vaWhzUVVzS1dya0drMUs1eHVPWlVsdzRkTVZSQThkcFdKalhWMHJ0RlhFSHFHZWtLYnVQWFpwemJ3SGVMS0pUK0FKTVpWRENiQzZNMWFPdEpZcjZ5bDJWRUhYdWZrU2NPaEVlY2FHWmR6QWFvMEd3NXNETlBHamZndjdOOUhkZEhkbjZiclNJM0lNd1doTGxwUkJST01XMUF6NlRkaGMxV2dqRGxraGhXWnZWMEdnWng2cGhkTnJEOUEyZlhybnpIQWdBQSJ9 -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["link"],"name":[2],"type":["chr"],"align":["left"]},{"label":["issue"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["volume"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["nchar_title"],"name":[5],"type":["int"],"align":["right"]},{"label":["nchar_link"],"name":[6],"type":["int"],"align":["right"]},{"label":["nchar_total"],"name":[7],"type":["int"],"align":["right"]}],"data":[{"1":"Simulation of enzyme–substrate encounter with gated active sites","2":"https://www.nature.com/articles/nsb0194-65","3":"1","4":"1","5":"64","6":"42","7":"106"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSB4IDddIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUndVN0RNQXgxUjd1cVJRd2tMdnpFT2pHMEN4ZUU0SXpRVHJ1aDBCVWFMVTJxSktVYytXUytZT0MwOWRRbVVsSy9aNy9tMmRrKzcrN1NYUW9BWnhBR2VFWVl3dnpwOVhhOVdRT0VNMFFCaEpDNDd6Zm1yekdJY1Y5MUNZRGtEOWNKOTRVM3BiVzF1Vit0MnJiTkpMT05MckpjVlMrUG1GdTR1b2Rmb09YakM0ZC9Sckg3MzVTZm1Jb2txd296R0lpSnROeUtZZ0NoNFBKQUNXNU1RNG41bHhKTlJlaGM1aVhUYjJObDJsTWpQUlVweTRSbkpOSEtOZHViSWVlQjd6WVh6SkJiSXRNOXN5ejcwS2hGZFBRa3Nhb3RWeEpGTXpmN3lCTUgyaU11RytsYzdKZDUyY2pEY3VNdUdOekExTmtwanZzclovU09FUTJva0o5YzBqUWl3ZDRMTVlBRmR0czFtOVdhUzB1ZElHdXlmam9Ea3l0QlROY2JIUDhCb2gvRTFuTUNBQUE9In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["link"],"name":[2],"type":["chr"],"align":["left"]},{"label":["issue"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["volume"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["nchar_title"],"name":[5],"type":["int"],"align":["right"]},{"label":["nchar_link"],"name":[6],"type":["int"],"align":["right"]},{"label":["nchar_total"],"name":[7],"type":["int"],"align":["right"]}],"data":[{"1":"NA","2":"https://www.nature.comNA","3":"1","4":"1","5":"NA","6":"24","7":"NA"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSB4IDddIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUndVN0RNQXgxUjd1cVJRd2tMdnpFT2pHMEN4ZUU0SXpRVHJ1aDBCVWFMVTJxSktVYytXUytZT0MwOWRRbVVsSy9aNy9tMmRrKzcrN1NYUW9BWnhBR2VFWVl3dnpwOVhhOVdRT0VNMFFCaEpDNDd6Zm1yekdJY1Y5MUNZRGtEOWNKOTRVM3BiVzF1Vit0MnJiTkpMT05MckpjVlMrUG1GdTR1b2Rmb09YakM0ZC9Sckg3MzVTZm1Jb2txd296R0lpSnROeUtZZ0NoNFBKQUNXNU1RNG41bHhKTlJlaGM1aVhUYjJObDJsTWpQUlVweTRSbkpOSEtOZHViSWVlQjd6WVh6SkJiSXRNOXN5ejcwS2hGZFBRa3Nhb3RWeEpGTXpmN3lCTUgyaU11RytsYzdKZDUyY2pEY3VNdUdOekExTmtwanZzclovU09FUTJva0o5YzBqUWl3ZDRMTVlBRmR0czFtOVdhUzB1ZElHdXlmam9Ea3l0QlROY2JIUDhCb2gvRTFuTUNBQUE9In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["link"],"name":[2],"type":["chr"],"align":["left"]},{"label":["issue"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["volume"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["nchar_title"],"name":[5],"type":["int"],"align":["right"]},{"label":["nchar_link"],"name":[6],"type":["int"],"align":["right"]},{"label":["nchar_total"],"name":[7],"type":["int"],"align":["right"]}],"data":[{"1":"NA","2":"https://www.nature.comNA","3":"1","4":"1","5":"NA","6":"24","7":"NA"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSB4IDddIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUndVN0RNQXgxUjd1cVJRd2tMdnpFT2pHMEN4ZUU0SXpRVHJ1aDBCVWFMVTJxSktVYytXUytZT0MwOWRRbVVsSy9aNy9tMmRrKzcrN1NYUW9BWnhBR2VFWVl3dnpwOVhhOVdRT0VNMFFCaEpDNDd6Zm1yekdJY1Y5MUNZRGtEOWNKOTRVM3BiVzF1Vit0MnJiTkpMT05MckpjVlMrUG1GdTR1b2Rmb09YakM0ZC9Sckg3MzVTZm1Jb2txd296R0lpSnROeUtZZ0NoNFBKQUNXNU1RNG41bHhKTlJlaGM1aVhUYjJObDJsTWpQUlVweTRSbkpOSEtOZHViSWVlQjd6WVh6SkJiSXRNOXN5ejcwS2hGZFBRa3Nhb3RWeEpGTXpmN3lCTUgyaU11RytsYzdKZDUyY2pEY3VNdUdOekExTmtwanZzclovU09FUTJva0o5YzBqUWl3ZDRMTVlBRmR0czFtOVdhUzB1ZElHdXlmam9Ea3l0QlROY2JIUDhCb2gvRTFuTUNBQUE9In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["link"],"name":[2],"type":["chr"],"align":["left"]},{"label":["issue"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["volume"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["nchar_title"],"name":[5],"type":["int"],"align":["right"]},{"label":["nchar_link"],"name":[6],"type":["int"],"align":["right"]},{"label":["nchar_total"],"name":[7],"type":["int"],"align":["right"]}],"data":[{"1":"NA","2":"https://www.nature.comNA","3":"1","4":"1","5":"NA","6":"24","7":"NA"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSB4IDddIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUndVN0RNQXgxUjd1cVJRd2tMdnpFT2pHMEN4ZUU0SXpRVHJ1aDBCVWFMVTJxSktVYytXUytZT0MwOWRRbVVsSy9aNy9tMmRrKzcrN1NYUW9BWnhBR2VFWVl3dnpwOVhhOVdRT0VNMFFCaEpDNDd6Zm1yekdJY1Y5MUNZRGtEOWNKOTRVM3BiVzF1Vit0MnJiTkpMT05MckpjVlMrUG1GdTR1b2Rmb09YakM0ZC9Sckg3MzVTZm1Jb2txd296R0lpSnROeUtZZ0NoNFBKQUNXNU1RNG41bHhKTlJlaGM1aVhUYjJObDJsTWpQUlVweTRSbkpOSEtOZHViSWVlQjd6WVh6SkJiSXRNOXN5ejcwS2hGZFBRa3Nhb3RWeEpGTXpmN3lCTUgyaU11RytsYzdKZDUyY2pEY3VNdUdOekExTmtwanZzclovU09FUTJva0o5YzBqUWl3ZDRMTVlBRmR0czFtOVdhUzB1ZElHdXlmam9Ea3l0QlROY2JIUDhCb2gvRTFuTUNBQUE9In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["link"],"name":[2],"type":["chr"],"align":["left"]},{"label":["issue"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["volume"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["nchar_title"],"name":[5],"type":["int"],"align":["right"]},{"label":["nchar_link"],"name":[6],"type":["int"],"align":["right"]},{"label":["nchar_total"],"name":[7],"type":["int"],"align":["right"]}],"data":[{"1":"NA","2":"https://www.nature.comNA","3":"1","4":"1","5":"NA","6":"24","7":"NA"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSB4IDddIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUndVN0RNQXgxUjd1cVJRd2tMdnpFT2pHMEN4ZUU0SXpRVHJ1aDBCVWFMVTJxSktVYytXUytZT0MwOWRRbVVsSy9aNy9tMmRrKzcrN1NYUW9BWnhBR2VFWVl3dnpwOVhhOVdRT0VNMFFCaEpDNDd6Zm1yekdJY1Y5MUNZRGtEOWNKOTRVM3BiVzF1Vit0MnJiTkpMT05MckpjVlMrUG1GdTR1b2Rmb09YakM0ZC9Sckg3MzVTZm1Jb2txd296R0lpSnROeUtZZ0NoNFBKQUNXNU1RNG41bHhKTlJlaGM1aVhUYjJObDJsTWpQUlVweTRSbkpOSEtOZHViSWVlQjd6WVh6SkJiSXRNOXN5ejcwS2hGZFBRa3Nhb3RWeEpGTXpmN3lCTUgyaU11RytsYzdKZDUyY2pEY3VNdUdOekExTmtwanZzclovU09FUTJva0o5YzBqUWl3ZDRMTVlBRmR0czFtOVdhUzB1ZElHdXlmam9Ea3l0QlROY2JIUDhCb2gvRTFuTUNBQUE9In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["link"],"name":[2],"type":["chr"],"align":["left"]},{"label":["issue"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["volume"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["nchar_title"],"name":[5],"type":["int"],"align":["right"]},{"label":["nchar_link"],"name":[6],"type":["int"],"align":["right"]},{"label":["nchar_total"],"name":[7],"type":["int"],"align":["right"]}],"data":[{"1":"NA","2":"https://www.nature.comNA","3":"1","4":"1","5":"NA","6":"24","7":"NA"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSB4IDddIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUndVN0RNQXgxUjd1cVJRd2tMdnpFT2pHMEN4ZUU0SXpRVHJ1aDBCVWFMVTJxSktVYytXUytZT0MwOWRRbVVsSy9aNy9tMmRrKzcrN1NYUW9BWnhBR2VFWVl3dnpwOVhhOVdRT0VNMFFCaEpDNDd6Zm1yekdJY1Y5MUNZRGtEOWNKOTRVM3BiVzF1Vit0MnJiTkpMT05MckpjVlMrUG1GdTR1b2Rmb09YakM0ZC9Sckg3MzVTZm1Jb2txd296R0lpSnROeUtZZ0NoNFBKQUNXNU1RNG41bHhKTlJlaGM1aVhUYjJObDJsTWpQUlVweTRSbkpOSEtOZHViSWVlQjd6WVh6SkJiSXRNOXN5ejcwS2hGZFBRa3Nhb3RWeEpGTXpmN3lCTUgyaU11RytsYzdKZDUyY2pEY3VNdUdOekExTmtwanZzclovU09FUTJva0o5YzBqUWl3ZDRMTVlBRmR0czFtOVdhUzB1ZElHdXlmam9Ea3l0QlROY2JIUDhCb2gvRTFuTUNBQUE9In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["link"],"name":[2],"type":["chr"],"align":["left"]},{"label":["issue"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["volume"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["nchar_title"],"name":[5],"type":["int"],"align":["right"]},{"label":["nchar_link"],"name":[6],"type":["int"],"align":["right"]},{"label":["nchar_total"],"name":[7],"type":["int"],"align":["right"]}],"data":[{"1":"NA","2":"https://www.nature.comNA","3":"1","4":"1","5":"NA","6":"24","7":"NA"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSB4IDddIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUndVN0RNQXgxUjd1cVJRd2tMdnpFT2pHMEN4ZUU0SXpRVHJ1aDBCVWFMVTJxSktVYytXUytZT0MwOWRRbVVsSy9aNy9tMmRrKzcrN1NYUW9BWnhBR2VFWVl3dnpwOVhhOVdRT0VNMFFCaEpDNDd6Zm1yekdJY1Y5MUNZRGtEOWNKOTRVM3BiVzF1Vit0MnJiTkpMT05MckpjVlMrUG1GdTR1b2Rmb09YakM0ZC9Sckg3MzVTZm1Jb2txd296R0lpSnROeUtZZ0NoNFBKQUNXNU1RNG41bHhKTlJlaGM1aVhUYjJObDJsTWpQUlVweTRSbkpOSEtOZHViSWVlQjd6WVh6SkJiSXRNOXN5ejcwS2hGZFBRa3Nhb3RWeEpGTXpmN3lCTUgyaU11RytsYzdKZDUyY2pEY3VNdUdOekExTmtwanZzclovU09FUTJva0o5YzBqUWl3ZDRMTVlBRmR0czFtOVdhUzB1ZElHdXlmam9Ea3l0QlROY2JIUDhCb2gvRTFuTUNBQUE9In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["link"],"name":[2],"type":["chr"],"align":["left"]},{"label":["issue"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["volume"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["nchar_title"],"name":[5],"type":["int"],"align":["right"]},{"label":["nchar_link"],"name":[6],"type":["int"],"align":["right"]},{"label":["nchar_total"],"name":[7],"type":["int"],"align":["right"]}],"data":[{"1":"NA","2":"https://www.nature.comNA","3":"1","4":"1","5":"NA","6":"24","7":"NA"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSB4IDddIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUndVN0RNQXgxUjd1cVJRd2tMdnpFT2pHMEN4ZUU0SXpRVHJ1aDBCVWFMVTJxSktVYytXUytZT0MwOWRRbVVsSy9aNy9tMmRrKzcrN1NYUW9BWnhBR2VFWVl3dnpwOVhhOVdRT0VNMFFCaEpDNDd6Zm1yekdJY1Y5MUNZRGtEOWNKOTRVM3BiVzF1Vit0MnJiTkpMT05MckpjVlMrUG1GdTR1b2Rmb09YakM0ZC9Sckg3MzVTZm1Jb2txd296R0lpSnROeUtZZ0NoNFBKQUNXNU1RNG41bHhKTlJlaGM1aVhUYjJObDJsTWpQUlVweTRSbkpOSEtOZHViSWVlQjd6WVh6SkJiSXRNOXN5ejcwS2hGZFBRa3Nhb3RWeEpGTXpmN3lCTUgyaU11RytsYzdKZDUyY2pEY3VNdUdOekExTmtwanZzclovU09FUTJva0o5YzBqUWl3ZDRMTVlBRmR0czFtOVdhUzB1ZElHdXlmam9Ea3l0QlROY2JIUDhCb2gvRTFuTUNBQUE9In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["link"],"name":[2],"type":["chr"],"align":["left"]},{"label":["issue"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["volume"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["nchar_title"],"name":[5],"type":["int"],"align":["right"]},{"label":["nchar_link"],"name":[6],"type":["int"],"align":["right"]},{"label":["nchar_total"],"name":[7],"type":["int"],"align":["right"]}],"data":[{"1":"NA","2":"https://www.nature.comNA","3":"1","4":"1","5":"NA","6":"24","7":"NA"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSB4IDddIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUndVN0RNQXgxUjd1cVJRd2tMdnpFT2pHMEN4ZUU0SXpRVHJ1aDBCVWFMVTJxSktVYytXUytZT0MwOWRRbVVsSy9aNy9tMmRrKzcrN1NYUW9BWnhBR2VFWVl3dnpwOVhhOVdRT0VNMFFCaEpDNDd6Zm1yekdJY1Y5MUNZRGtEOWNKOTRVM3BiVzF1Vit0MnJiTkpMT05MckpjVlMrUG1GdTR1b2Rmb09YakM0ZC9Sckg3MzVTZm1Jb2txd296R0lpSnROeUtZZ0NoNFBKQUNXNU1RNG41bHhKTlJlaGM1aVhUYjJObDJsTWpQUlVweTRSbkpOSEtOZHViSWVlQjd6WVh6SkJiSXRNOXN5ejcwS2hGZFBRa3Nhb3RWeEpGTXpmN3lCTUgyaU11RytsYzdKZDUyY2pEY3VNdUdOekExTmtwanZzclovU09FUTJva0o5YzBqUWl3ZDRMTVlBRmR0czFtOVdhUzB1ZElHdXlmam9Ea3l0QlROY2JIUDhCb2gvRTFuTUNBQUE9In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["link"],"name":[2],"type":["chr"],"align":["left"]},{"label":["issue"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["volume"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["nchar_title"],"name":[5],"type":["int"],"align":["right"]},{"label":["nchar_link"],"name":[6],"type":["int"],"align":["right"]},{"label":["nchar_total"],"name":[7],"type":["int"],"align":["right"]}],"data":[{"1":"NA","2":"https://www.nature.comNA","3":"1","4":"1","5":"NA","6":"24","7":"NA"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSB4IDddIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUndVN0RNQXgxUjd1cVJRd2tMdnpFT2pHMEN4ZUU0SXpRVHJ1aDBCVWFMVTJxSktVYytXUytZT0MwOWRRbVVsSy9aNy9tMmRrKzcrN1NYUW9BWnhBR2VFWVl3dnpwOVhhOVdRT0VNMFFCaEpDNDd6Zm1yekdJY1Y5MUNZRGtEOWNKOTRVM3BiVzF1Vit0MnJiTkpMT05MckpjVlMrUG1GdTR1b2Rmb09YakM0ZC9Sckg3MzVTZm1Jb2txd296R0lpSnROeUtZZ0NoNFBKQUNXNU1RNG41bHhKTlJlaGM1aVhUYjJObDJsTWpQUlVweTRSbkpOSEtOZHViSWVlQjd6WVh6SkJiSXRNOXN5ejcwS2hGZFBRa3Nhb3RWeEpGTXpmN3lCTUgyaU11RytsYzdKZDUyY2pEY3VNdUdOekExTmtwanZzclovU09FUTJva0o5YzBqUWl3ZDRMTVlBRmR0czFtOVdhUzB1ZElHdXlmam9Ea3l0QlROY2JIUDhCb2gvRTFuTUNBQUE9In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["link"],"name":[2],"type":["chr"],"align":["left"]},{"label":["issue"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["volume"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["nchar_title"],"name":[5],"type":["int"],"align":["right"]},{"label":["nchar_link"],"name":[6],"type":["int"],"align":["right"]},{"label":["nchar_total"],"name":[7],"type":["int"],"align":["right"]}],"data":[{"1":"NA","2":"https://www.nature.comNA","3":"1","4":"1","5":"NA","6":"24","7":"NA"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSB4IDddIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUndVN0RNQXgxUjd1cVJRd2tMdnpFT2pHMEN4ZUU0SXpRVHJ1aDBCVWFMVTJxSktVYytXUytZT0MwOWRRbVVsSy9aNy9tMmRrKzcrN1NYUW9BWnhBR2VFWVl3dnpwOVhhOVdRT0VNMFFCaEpDNDd6Zm1yekdJY1Y5MUNZRGtEOWNKOTRVM3BiVzF1Vit0MnJiTkpMT05MckpjVlMrUG1GdTR1b2Rmb09YakM0ZC9Sckg3MzVTZm1Jb2txd296R0lpSnROeUtZZ0NoNFBKQUNXNU1RNG41bHhKTlJlaGM1aVhUYjJObDJsTWpQUlVweTRSbkpOSEtOZHViSWVlQjd6WVh6SkJiSXRNOXN5ejcwS2hGZFBRa3Nhb3RWeEpGTXpmN3lCTUgyaU11RytsYzdKZDUyY2pEY3VNdUdOekExTmtwanZzclovU09FUTJva0o5YzBqUWl3ZDRMTVlBRmR0czFtOVdhUzB1ZElHdXlmam9Ea3l0QlROY2JIUDhCb2gvRTFuTUNBQUE9In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["link"],"name":[2],"type":["chr"],"align":["left"]},{"label":["issue"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["volume"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["nchar_title"],"name":[5],"type":["int"],"align":["right"]},{"label":["nchar_link"],"name":[6],"type":["int"],"align":["right"]},{"label":["nchar_total"],"name":[7],"type":["int"],"align":["right"]}],"data":[{"1":"NA","2":"https://www.nature.comNA","3":"1","4":"1","5":"NA","6":"24","7":"NA"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5cbmxvb3BfbGlzdCA8LSAxOjIwXG5cbm5zbWJfdGVzdCA8LSBhcy5jaGFyYWN0ZXIoKVxubnNtYl90ZXN0X2xpbmsgPC0gYXMuY2hhcmFjdGVyKClcblxubmF0dXJlX2RhdGEgPC0gZnVuY3Rpb24obG9vcF92ZWN0KSB7XG4gIFxuICBcbiAgICAjYXJ0aWNsZSB0aXRsZVxubnNtYl9ub2RlIDwtICBuc21iICU+JSBodG1sX25vZGUocGFzdGUwKFwiLnBiMzA6bnRoLWNoaWxkKFwiLHt7bG9vcF92ZWN0fX0sXCIpIGFcIikpICU+JSBodG1sX3RleHQoKSAgJT4lIFxuICAgICAgICAjIFRyaW0gYWRkaXRpb25hbCB3aGl0ZSBzcGFjZVxuICAgICAgICBzdHJfdHJpbSgpICU+JSAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICMgQ29udmVydCB0aGUgbGlzdCBpbnRvIGEgdmVjdG9yXG4gICAgICAgIHVubGlzdCgpXG5cbm5zbWJfdDAgPC0gc3RyX3RyaW0oc2FwcGx5KHN0cnNwbGl0KG5zbWJfbm9kZSwgXCJcXG5cIiksIFwiW1wiLCAxKSkgXG5cbm5zbWJfdGVzdCA8LSByYmluZChuc21iX3Rlc3QsIG5zbWJfdDApXG5cblxuIyBhcnRpY2xlIGxpbmtcbm5zbWJfbm9kZV9saW5rIDwtICBuc21iICU+JSBodG1sX25vZGUocGFzdGUwKFwiLnBiMzA6bnRoLWNoaWxkKFwiLHt7bG9vcF92ZWN0fX0sXCIpIGFcIikpICU+JSBodG1sX2F0dHIoJ2hyZWYnKSAgJT4lIFxuICAgICAgICAjIFRyaW0gYWRkaXRpb25hbCB3aGl0ZSBzcGFjZVxuICAgICAgICBzdHJfdHJpbSgpICU+JSAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICMgQ29udmVydCB0aGUgbGlzdCBpbnRvIGEgdmVjdG9yXG4gICAgICAgIHVubGlzdCgpXG5cbm5zbWJfdDBfbGluayA8LSBzdHJfdHJpbShuc21iX25vZGVfbGluaykgXG5cbm5zbWJfdGVzdF9saW5rIDwtIHJiaW5kKG5zbWJfdGVzdF9saW5rLCBuc21iX3QwX2xpbmspXG5cblxubnNtYjJfbGluayA8LSBuc21iX3Rlc3RfbGluayAlPiUgZGF0YS5mcmFtZSgpICU+JSB0cmFuc211dGUobGluayA9IChwYXN0ZTAoXCJodHRwczovL3d3dy5uYXR1cmUuY29tXCIsLikpKVxucm93Lm5hbWVzKG5zbWIyX2xpbmspIDwtIE5VTExcblxubnNtYjIgPC0gbnNtYl90ZXN0ICU+JSBkYXRhLmZyYW1lKCkgJT4lIGRwbHlyOjpyZW5hbWUoLixcInRpdGxlXCIgPSBcIi5cIilcbnJvdy5uYW1lcyhuc21iMikgPC0gTlVMTFxuXG5uc21iMyA8LSBjYmluZChuc21iMixuc21iMl9saW5rLGlzc3VlLHZvbHVtZSkgJT4lIG11dGF0ZShuY2hhcl90aXRsZSA9IG5jaGFyKGFzLmNoYXJhY3Rlcih0aXRsZSkpLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBuY2hhcl9saW5rICA9IG5jaGFyKGxpbmspLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBuY2hhcl90b3RhbCA9IG5jaGFyKGFzLmNoYXJhY3Rlcih0aXRsZSkpICsgbmNoYXIobGluaykpXG5wcmludChuc21iMylcbn1cblxubmF0dXJlX2RhdGEobG9vcF9saXN0KVxuXG5sb3BfZGF0IDwtIGxhcHBseShsb29wX2xpc3QsIG5hdHVyZV9kYXRhKVxuXG5cbm5zbWIyX2xpbmsgPC0gbnNtYl90ZXN0X2xpbmsgJT4lIGRhdGEuZnJhbWUoKSAlPiUgdHJhbnNtdXRlKGxpbmsgPSAocGFzdGUwKFwiaHR0cHM6Ly93d3cubmF0dXJlLmNvbVwiLC4pKSlcbnJvdy5uYW1lcyhuc21iMl9saW5rKSA8LSBOVUxMXG5cbm5zbWIyIDwtIG5zbWJfdGVzdCAlPiUgZGF0YS5mcmFtZSgpICU+JSBkcGx5cjo6cmVuYW1lKC4sXCJ0aXRsZVwiID0gXCIuXCIpXG5yb3cubmFtZXMobnNtYjIpIDwtIE5VTExcblxubmNoYXIoYXMuY2hhcmFjdGVyKG5zbWIyJHRpdGxlKSlcblxubnNtYjMgPC0gY2JpbmQobnNtYjIsbnNtYjJfbGluayxpc3N1ZSx2b2x1bWUpICU+JSBtdXRhdGUobmNoYXJfdGl0bGUgPSBuY2hhcihhcy5jaGFyYWN0ZXIodGl0bGUpKSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbmNoYXJfbGluayAgPSBuY2hhcihsaW5rKSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbmNoYXJfdG90YWwgPSBuY2hhcihhcy5jaGFyYWN0ZXIodGl0bGUpKSArIG5jaGFyKGxpbmspKVxuXG5cbmBgYCJ9 -->
+<pre class="r"><code>
+
+loop_list &lt;- 1:20
+
+nsmb_test &lt;- as.character()
+nsmb_test_link &lt;- as.character()
+
+nature_data &lt;- function(loop_vect) {
+  
+  
+    #article title
+nsmb_node &lt;-  nsmb %&gt;% html_node(paste0(&quot;.pb30:nth-child(&quot;,{{loop_vect}},&quot;) a&quot;)) %&gt;% html_text()  %&gt;% 
+        # Trim additional white space
+        str_trim() %&gt;%                       
+        # Convert the list into a vector
+        unlist()
+
+nsmb_t0 &lt;- str_trim(sapply(strsplit(nsmb_node, &quot;\n&quot;), &quot;[&quot;, 1)) 
+
+nsmb_test &lt;- rbind(nsmb_test, nsmb_t0)
+
+
+# article link
+nsmb_node_link &lt;-  nsmb %&gt;% html_node(paste0(&quot;.pb30:nth-child(&quot;,{{loop_vect}},&quot;) a&quot;)) %&gt;% html_attr(&#39;href&#39;)  %&gt;% 
+        # Trim additional white space
+        str_trim() %&gt;%                       
+        # Convert the list into a vector
+        unlist()
+
+nsmb_t0_link &lt;- str_trim(nsmb_node_link) 
+
+nsmb_test_link &lt;- rbind(nsmb_test_link, nsmb_t0_link)
+
+
+nsmb2_link &lt;- nsmb_test_link %&gt;% data.frame() %&gt;% transmute(link = (paste0(&quot;https://www.nature.com&quot;,.)))
+row.names(nsmb2_link) &lt;- NULL
+
+nsmb2 &lt;- nsmb_test %&gt;% data.frame() %&gt;% dplyr::rename(.,&quot;title&quot; = &quot;.&quot;)
+row.names(nsmb2) &lt;- NULL
+
+nsmb3 &lt;- cbind(nsmb2,nsmb2_link,issue,volume) %&gt;% mutate(nchar_title = nchar(as.character(title)),
+                                            nchar_link  = nchar(link),
+                                            nchar_total = nchar(as.character(title)) + nchar(link))
+print(nsmb3)
+}
+
+nature_data(loop_list)
+
+lop_dat &lt;- lapply(loop_list, nature_data)
+
+
+nsmb2_link &lt;- nsmb_test_link %&gt;% data.frame() %&gt;% transmute(link = (paste0(&quot;https://www.nature.com&quot;,.)))
+row.names(nsmb2_link) &lt;- NULL
+
+nsmb2 &lt;- nsmb_test %&gt;% data.frame() %&gt;% dplyr::rename(.,&quot;title&quot; = &quot;.&quot;)
+row.names(nsmb2) &lt;- NULL
+
+nchar(as.character(nsmb2$title))
+
+nsmb3 &lt;- cbind(nsmb2,nsmb2_link,issue,volume) %&gt;% mutate(nchar_title = nchar(as.character(title)),
+                                            nchar_link  = nchar(link),
+                                            nchar_total = nchar(as.character(title)) + nchar(link))
+</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnNtYl8xIDwtIG5zbWIgJT4lIGh0bWxfbm9kZShwYXN0ZTAoXCIucGIzMDpudGgtY2hpbGQoXCIsMSxcIikgYVwiKSkgJT4lIGh0bWxfdGV4dCgpICAgJT4lIFxuICAgICAgICAjIFRyaW0gYWRkaXRpb25hbCB3aGl0ZSBzcGFjZVxuICAgICAgICBzdHJfdHJpbSgpICU+JSAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICMgQ29udmVydCB0aGUgbGlzdCBpbnRvIGEgdmVjdG9yXG4gICAgICAgIHVubGlzdCgpXG5cbm5zbWJfMVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnNtYl8xIDwtIG5zbWIgJT4lIGh0bWxfbm9kZShwYXN0ZTAoXCIucGIzMDpudGgtY2hpbGQoXCIsMSxcIikgYVwiKSkgJT4lIGh0bWxfdGV4dCgpICAgJT4lIFxuICAgICAgICAjIFRyaW0gYWRkaXRpb25hbCB3aGl0ZSBzcGFjZVxuICAgICAgICBzdHJfdHJpbSgpICU+JSAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICMgQ29udmVydCB0aGUgbGlzdCBpbnRvIGEgdmVjdG9yXG4gICAgICAgIHVubGlzdCgpXG5cbm5zbWJfMVxubnNtYl90MCA8LSBzdHJfdHJpbShzYXBwbHkoc3Ryc3BsaXQobnNtYl8xLCBcIlxcblwiKSwgXCJbXCIsIDEpKSBcblxubnNtYl90MFxuYGBgIn0= -->
 <pre class="r"><code>nsmb_1 &lt;- nsmb %&gt;% html_node(paste0(&quot;.pb30:nth-child(&quot;,1,&quot;) a&quot;)) %&gt;% html_text()   %&gt;% 
         # Trim additional white space
         str_trim() %&gt;%                       
         # Convert the list into a vector
         unlist()
 
-nsmb_1</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVGhlIENoYW5naW5nIFN0cnVjdHVyZSBvZiBCaW9sb2d5XCJcbiJ9 -->
-<pre><code>[1] &quot;The Changing Structure of Biology&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnNtYl90MCA8LSBzdHJfdHJpbShzYXBwbHkoc3Ryc3BsaXQobnNtYl8xLCBcIlxcblwiKSwgXCJbXCIsIDEpKSBcblxubnNtYl90MFxuYGBgIn0= -->
-<pre class="r"><code>nsmb_t0 &lt;- str_trim(sapply(strsplit(nsmb_1, &quot;\n&quot;), &quot;[&quot;, 1)) 
+nsmb_1
+nsmb_t0 &lt;- str_trim(sapply(strsplit(nsmb_1, &quot;\n&quot;), &quot;[&quot;, 1)) 
 
 nsmb_t0</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVGhlIENoYW5naW5nIFN0cnVjdHVyZSBvZiBCaW9sb2d5XCJcbiJ9 -->
-<pre><code>[1] &quot;The Changing Structure of Biology&quot;</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5sb29wX2xpc3QgPC0gMToyMFxuXG5uc21iX3Rlc3QgPC0gYXMuY2hhcmFjdGVyKClcbm5zbWJfdGVzdF9saW5rIDwtIGFzLmNoYXJhY3RlcigpXG5cblxuZm9yIChsb29wIGluIGxvb3BfbGlzdCl7XG4gICNhcnRpY2xlIHRpdGxlXG5uc21iX25vZGUgPC0gIG5zbWIgJT4lIGh0bWxfbm9kZShwYXN0ZTAoXCIucGIzMDpudGgtY2hpbGQoXCIsbG9vcCxcIikgYVwiKSkgJT4lIGh0bWxfdGV4dCgpICAlPiUgXG4gICAgICAgICMgVHJpbSBhZGRpdGlvbmFsIHdoaXRlIHNwYWNlXG4gICAgICAgIHN0cl90cmltKCkgJT4lICAgICAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgIyBDb252ZXJ0IHRoZSBsaXN0IGludG8gYSB2ZWN0b3JcbiAgICAgICAgdW5saXN0KClcblxubnNtYl90MCA8LSBzdHJfdHJpbShzYXBwbHkoc3Ryc3BsaXQobnNtYl9ub2RlLCBcIlxcblwiKSwgXCJbXCIsIDEpKSBcblxubnNtYl90ZXN0IDwtIHJiaW5kKG5zbWJfdGVzdCwgbnNtYl90MClcblxuXG4jIGFydGljbGUgbGlua1xubnNtYl9ub2RlX2xpbmsgPC0gIG5zbWIgJT4lIGh0bWxfbm9kZShwYXN0ZTAoXCIucGIzMDpudGgtY2hpbGQoXCIsbG9vcCxcIikgYVwiKSkgJT4lIGh0bWxfYXR0cignaHJlZicpICAlPiUgXG4gICAgICAgICMgVHJpbSBhZGRpdGlvbmFsIHdoaXRlIHNwYWNlXG4gICAgICAgIHN0cl90cmltKCkgJT4lICAgICAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgIyBDb252ZXJ0IHRoZSBsaXN0IGludG8gYSB2ZWN0b3JcbiAgICAgICAgdW5saXN0KClcblxubnNtYl90MF9saW5rIDwtIHN0cl90cmltKG5zbWJfbm9kZV9saW5rKSBcblxubnNtYl90ZXN0X2xpbmsgPC0gcmJpbmQobnNtYl90ZXN0X2xpbmssIG5zbWJfdDBfbGluaylcblxuXG5cbn1cblxubnNtYjJfbGluayA8LSBuc21iX3Rlc3RfbGluayAlPiUgZGF0YS5mcmFtZSgpICU+JSB0cmFuc211dGUobGluayA9IChwYXN0ZTAoXCJodHRwczovL3d3dy5uYXR1cmUuY29tXCIsLikpKVxucm93Lm5hbWVzKG5zbWIyX2xpbmspIDwtIE5VTExcblxubnNtYjIgPC0gbnNtYl90ZXN0ICU+JSBkYXRhLmZyYW1lKCkgJT4lIGRwbHlyOjpyZW5hbWUoLixcInRpdGxlXCIgPSBcIi5cIilcbnJvdy5uYW1lcyhuc21iMikgPC0gTlVMTFxuXG5uY2hhcihhcy5jaGFyYWN0ZXIobnNtYjIkdGl0bGUpKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5sb29wX2xpc3QgPC0gMToyMFxuXG5uc21iX3Rlc3QgPC0gYXMuY2hhcmFjdGVyKClcbm5zbWJfdGVzdF9saW5rIDwtIGFzLmNoYXJhY3RlcigpXG5cblxuZm9yIChsb29wIGluIGxvb3BfbGlzdCl7XG4gICNhcnRpY2xlIHRpdGxlXG5uc21iX25vZGUgPC0gIG5zbWIgJT4lIGh0bWxfbm9kZShwYXN0ZTAoXCIucGIzMDpudGgtY2hpbGQoXCIsbG9vcCxcIikgYVwiKSkgJT4lIGh0bWxfdGV4dCgpICAlPiUgXG4gICAgICAgICMgVHJpbSBhZGRpdGlvbmFsIHdoaXRlIHNwYWNlXG4gICAgICAgIHN0cl90cmltKCkgJT4lICAgICAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgIyBDb252ZXJ0IHRoZSBsaXN0IGludG8gYSB2ZWN0b3JcbiAgICAgICAgdW5saXN0KClcblxubnNtYl90MCA8LSBzdHJfdHJpbShzYXBwbHkoc3Ryc3BsaXQobnNtYl9ub2RlLCBcIlxcblwiKSwgXCJbXCIsIDEpKSBcblxubnNtYl90ZXN0IDwtIHJiaW5kKG5zbWJfdGVzdCwgbnNtYl90MClcblxuXG4jIGFydGljbGUgbGlua1xubnNtYl9ub2RlX2xpbmsgPC0gIG5zbWIgJT4lIGh0bWxfbm9kZShwYXN0ZTAoXCIucGIzMDpudGgtY2hpbGQoXCIsbG9vcCxcIikgYVwiKSkgJT4lIGh0bWxfYXR0cignaHJlZicpICAlPiUgXG4gICAgICAgICMgVHJpbSBhZGRpdGlvbmFsIHdoaXRlIHNwYWNlXG4gICAgICAgIHN0cl90cmltKCkgJT4lICAgICAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgIyBDb252ZXJ0IHRoZSBsaXN0IGludG8gYSB2ZWN0b3JcbiAgICAgICAgdW5saXN0KClcblxubnNtYl90MF9saW5rIDwtIHN0cl90cmltKG5zbWJfbm9kZV9saW5rKSBcblxubnNtYl90ZXN0X2xpbmsgPC0gcmJpbmQobnNtYl90ZXN0X2xpbmssIG5zbWJfdDBfbGluaylcblxuXG5cbn1cblxubnNtYjJfbGluayA8LSBuc21iX3Rlc3RfbGluayAlPiUgZGF0YS5mcmFtZSgpICU+JSB0cmFuc211dGUobGluayA9IChwYXN0ZTAoXCJodHRwczovL3d3dy5uYXR1cmUuY29tXCIsLikpKVxucm93Lm5hbWVzKG5zbWIyX2xpbmspIDwtIE5VTExcblxubnNtYjIgPC0gbnNtYl90ZXN0ICU+JSBkYXRhLmZyYW1lKCkgJT4lIGRwbHlyOjpyZW5hbWUoLixcInRpdGxlXCIgPSBcIi5cIilcbnJvdy5uYW1lcyhuc21iMikgPC0gTlVMTFxuXG5uY2hhcihhcy5jaGFyYWN0ZXIobnNtYjIkdGl0bGUpKVxuXG5uc21iMyA8LSBjYmluZChuc21iMixuc21iMl9saW5rLGlzc3VlLHZvbHVtZSkgJT4lIG11dGF0ZShuY2hhcl90aXRsZSA9IG5jaGFyKGFzLmNoYXJhY3Rlcih0aXRsZSkpLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBuY2hhcl9saW5rICA9IG5jaGFyKGxpbmspLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBuY2hhcl90b3RhbCA9IG5jaGFyKGFzLmNoYXJhY3Rlcih0aXRsZSkpICsgbmNoYXIobGluaykpXG5cblxubnNtYjQgPC0gbnNtYjMgJT4lIG11dGF0ZShoYXNodGFnID0gXCIjc3RydWN0dXJhbGJpbyAjbnNtYiAjYmlvcGh5c2ljcyBAbmF0dXJlIEBOYXR1cmVTTUJcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgdHdlZXRfdGV4dCA9IHBhc3RlMChoYXNodGFnLFwiIFwiLGxpbmspLFxuICAgICAgICAgICAgICAgICAgICAgICAgICBuY2hhcl90d2VldCA9IG5jaGFyKGFzLmNoYXJhY3Rlcih0d2VldF90ZXh0KSkpICU+JVxuICAgICAgICAgICAgICAgICAgIGZpbHRlcihpcy5uYSh0aXRsZSkgIT0gVClcblxubnNtYjRcblxuI3JtKGxvb3AsIGxvb3BfbGlzdCwgbnNtYl90ZXN0LG5zbWJfdDAsIG5zbWJfbm9kZSwgbnNtYl9ub2RlX2xpbmssIG5zbWJfdDBfbGluaywgbnNtYl90ZXN0X2xpbmssIG5zbWIyX2xpbmssIG5zbWIyLCBuc21iMylcbmBgYCJ9 -->
 <pre class="r"><code>
 loop_list &lt;- 1:20
 
@@ -480,13 +435,9 @@ row.names(nsmb2_link) &lt;- NULL
 nsmb2 &lt;- nsmb_test %&gt;% data.frame() %&gt;% dplyr::rename(.,&quot;title&quot; = &quot;.&quot;)
 row.names(nsmb2) &lt;- NULL
 
-nchar(as.character(nsmb2$title))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAzMyAxOSAyNyA0MCA2MSA5OSA2MyA4MSA2NCBOQSBOQSBOQSBOQSBOQSBOQSBOQSBOQSBOQSBOQSBOQVxuIn0= -->
-<pre><code> [1] 33 19 27 40 61 99 63 81 64 NA NA NA NA NA NA NA NA NA NA NA</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnNtYjMgPC0gY2JpbmQobnNtYjIsbnNtYjJfbGluayxpc3N1ZSx2b2x1bWUpICU+JSBtdXRhdGUobmNoYXJfdGl0bGUgPSBuY2hhcihhcy5jaGFyYWN0ZXIodGl0bGUpKSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbmNoYXJfbGluayAgPSBuY2hhcihsaW5rKSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbmNoYXJfdG90YWwgPSBuY2hhcihhcy5jaGFyYWN0ZXIodGl0bGUpKSArIG5jaGFyKGxpbmspKVxuXG5cbm5zbWI0IDwtIG5zbWIzICU+JSBtdXRhdGUoaGFzaHRhZyA9IFwiI3N0cnVjdHVyYWxiaW8gI25zbWIgI2Jpb3BoeXNpY3MgQG5hdHVyZSBATmF0dXJlU01CXCIsXG4gICAgICAgICAgICAgICAgICAgICAgICAgIHR3ZWV0X3RleHQgPSBwYXN0ZTAoaGFzaHRhZyxcIiBcIixsaW5rKSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgbmNoYXJfdHdlZXQgPSBuY2hhcihhcy5jaGFyYWN0ZXIodHdlZXRfdGV4dCkpKSAlPiVcbiAgICAgICAgICAgICAgICAgICBmaWx0ZXIoaXMubmEodGl0bGUpICE9IFQpXG5cbm5zbWI0XG5gYGAifQ== -->
-<pre class="r"><code>nsmb3 &lt;- cbind(nsmb2,nsmb2_link,issue,volume) %&gt;% mutate(nchar_title = nchar(as.character(title)),
+nchar(as.character(nsmb2$title))
+
+nsmb3 &lt;- cbind(nsmb2,nsmb2_link,issue,volume) %&gt;% mutate(nchar_title = nchar(as.character(title)),
                                             nchar_link  = nchar(link),
                                             nchar_total = nchar(as.character(title)) + nchar(link))
 
@@ -496,24 +447,15 @@ nsmb4 &lt;- nsmb3 %&gt;% mutate(hashtag = &quot;#structuralbio #nsmb #biophysics
                           nchar_tweet = nchar(as.character(tweet_text))) %&gt;%
                    filter(is.na(title) != T)
 
-nsmb4</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6OSwibmNvbCI6MTAsInN1bW1hcnkiOnsiRGVzY3JpcHRpb24iOlsiZGYgWzkgeCAxMF0iXX19LCJyZGYiOiJINHNJQUFBQUFBQUFCdTFYelc0VE1SRGVoS1JWZ2xvaDljaGxVQyswRWttYk5oRkZvUDZxVXBGQTBIRG9wYTI4dTA3VzRMVlh0cmZKd3FVWGpweDRKTjZFSitBSkN1TmtYU1VSU0FTVUhCQ1J2dXp1ZUw3NTgyWThPVDA2MjZxZVZUM1B1K09WQ3ZoZHhsdHY0ZkRWWnFQWjhMeFNFWjhLWHNtcjJHc2YxMWZ3eHFyZlExVHloUWR2SWdxSEVSRmRKcnJRTmlvTlRLb295QTRjTU1sbE44c1ZWOXFjSlFsVkdlalUxMFlSUTNXK2RQOVlxaDVSSVJnSkJzMGRweUlrTVJXR2NLZnlzQzE1YXBnVW9FZGRrRVFHbVpGQnBHUk13VysyR3JuK3MzMEJxVWgxU2pqNHFXSTBoRVJ5b2lEZ3FUWlVBUk5Bb0VOaXhqTnJxSk9LTHFwaWlFUmpYTjYxTlVKdGJnekRDQXdRRVNLWGtpdTBGS1V4UWJvd3pGakhQdG82T1RtQlFNWUpwMzBnR2szSE1xUWNPbEtCcGlwaDR1djE1MFJKUTVsQUI5WW9WV2dXRTNJWjd1NExndVdTcWNiVmlQbk1TS1Z0YUpRVGJTd3BsQ0FrUnNKN0pOT0FYa09NSWVmd0xJLzU5RkJscU03SDYyU3JHdUZ1R05sblFrSUhvNFoyeExxVWN3SmhwcW1OaHhFS3hFQ2oxb1F2SDBGUm5aYzh0M3pRWm5IS3lXQVRiRmppZlJaVFRPdDJPMUVVeU5SYWdoNVdCcm9vd3hBeHl5c0ttdG45SG45MzFpSmpFdjJrWHUvMWVqVkJiTEExTEdLZEtNT3cxcm91dEwreHViUDlhSE5hUW5OYXd1T2NzUDY3aEsyTnFSbXRhUm5iVTBmVmJFN04ySm1XMFdxaTlyTGR4dDF2M3VEenQ5Y1oyRnNhdkdiWW5tem5zUzNHOWhEYkZ4Q0JWVVc4UnV5TjZLNk5ZUDBYY0xyUEVVOFJSNGhUUkJmeENjRVFIeEJ2dmZGWGZXdlYvUjRKOTVtRVZhRmpIMWJ4Tm9reXpRSU5lOE9hdzk3THdiWDk0dUEvOVIrbGpyOGE1MzlnQXFidG5ETjEwcHlIRTljTEwyYnA1TGFyejlaTGF4NWV0dWRTc2RzVFo3WmVkdWJoWlhDeXVRNS9Qb0tMbjJOc1FpNExIRm5kaEZOMVFod1JPYzBmU3B5SmQyNkJhWjI2aFlVcm5MUmk5M1JYQkJGUmw2UE02bEEwd25kS0VrZTlYTFFZRVIwWjBuVWMwNlBVWEJyYU54TWNLNThJdnFLa0xjMHdBVnVCNHZYd0hLMU1aaG5nTk9xeWRNSnFTQXlwZFJUeThlbG1ncklvaytHYzZ4WHRTVnllSUJmVWhHQUo5eVZnbk1Ld0FzTy9ISVdSYzcyUTc1QzdydzRkRnIvbmhzcXVyTlQrS1hFMUxIUGlVMWVyWmN4M2tHNHRVVGlMdXp4UXFtdWpOYTBHa2p2SklEUHY1Z2YwajJqVU5nMEFBQT09In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["link"],"name":[2],"type":["chr"],"align":["left"]},{"label":["issue"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["volume"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["nchar_title"],"name":[5],"type":["int"],"align":["right"]},{"label":["nchar_link"],"name":[6],"type":["int"],"align":["right"]},{"label":["nchar_total"],"name":[7],"type":["int"],"align":["right"]},{"label":["hashtag"],"name":[8],"type":["chr"],"align":["left"]},{"label":["tweet_text"],"name":[9],"type":["chr"],"align":["left"]},{"label":["nchar_tweet"],"name":[10],"type":["int"],"align":["right"]}],"data":[{"1":"The Changing Structure of Biology","2":"https://www.nature.com/articles/nsb0194-1","3":"1","4":"1","5":"33","6":"41","7":"74","8":"#structuralbio #nsmb #biophysics @nature @NatureSMB","9":"#structuralbio #nsmb #biophysics @nature @NatureSMB https://www.nature.com/articles/nsb0194-1","10":"93"},{"1":"Slippery substrates","2":"https://www.nature.com/articles/nsb0194-5","3":"1","4":"1","5":"19","6":"41","7":"60","8":"#structuralbio #nsmb #biophysics @nature @NatureSMB","9":"#structuralbio #nsmb #biophysics @nature @NatureSMB https://www.nature.com/articles/nsb0194-5","10":"93"},{"1":"Forward to the Fundamentals","2":"https://www.nature.com/articles/nsb0194-8","3":"1","4":"1","5":"27","6":"41","7":"68","8":"#structuralbio #nsmb #biophysics @nature @NatureSMB","9":"#structuralbio #nsmb #biophysics @nature @NatureSMB https://www.nature.com/articles/nsb0194-8","10":"93"},{"1":"Solution structure of apocytochrome b562","2":"https://www.nature.com/articles/nsb0194-30","3":"1","4":"1","5":"40","6":"42","7":"82","8":"#structuralbio #nsmb #biophysics @nature @NatureSMB","9":"#structuralbio #nsmb #biophysics @nature @NatureSMB https://www.nature.com/articles/nsb0194-30","10":"94"},{"1":"An unusual buried polar cluster in a family of fungal lipases","2":"https://www.nature.com/articles/nsb0194-36","3":"1","4":"1","5":"61","6":"42","7":"103","8":"#structuralbio #nsmb #biophysics @nature @NatureSMB","9":"#structuralbio #nsmb #biophysics @nature @NatureSMB https://www.nature.com/articles/nsb0194-36","10":"94"},{"1":"The intact and cleaved human antithrombin III complex as a model for serpin–proteinase interactions","2":"https://www.nature.com/articles/nsb0194-48","3":"1","4":"1","5":"99","6":"42","7":"141","8":"#structuralbio #nsmb #biophysics @nature @NatureSMB","9":"#structuralbio #nsmb #biophysics @nature @NatureSMB https://www.nature.com/articles/nsb0194-48","10":"94"},{"1":"Analogous inhibitors of elastase do not always bind analogously","2":"https://www.nature.com/articles/nsb0194-55","3":"1","4":"1","5":"63","6":"42","7":"105","8":"#structuralbio #nsmb #biophysics @nature @NatureSMB","9":"#structuralbio #nsmb #biophysics @nature @NatureSMB https://www.nature.com/articles/nsb0194-55","10":"94"},{"1":"Crystal structure of the holotoxino from Shigella dysenteriae at 2.5 Å resolution","2":"https://www.nature.com/articles/nsb0194-59","3":"1","4":"1","5":"81","6":"42","7":"123","8":"#structuralbio #nsmb #biophysics @nature @NatureSMB","9":"#structuralbio #nsmb #biophysics @nature @NatureSMB https://www.nature.com/articles/nsb0194-59","10":"94"},{"1":"Simulation of enzyme–substrate encounter with gated active sites","2":"https://www.nature.com/articles/nsb0194-65","3":"1","4":"1","5":"64","6":"42","7":"106","8":"#structuralbio #nsmb #biophysics @nature @NatureSMB","9":"#structuralbio #nsmb #biophysics @nature @NatureSMB https://www.nature.com/articles/nsb0194-65","10":"94"}],"options":{"columns":{"min":{},"max":[10],"total":[10]},"rows":{"min":[10],"max":[10],"total":[9]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jcm0obG9vcCwgbG9vcF9saXN0LCBuc21iX3Rlc3QsbnNtYl90MCwgbnNtYl9ub2RlLCBuc21iX25vZGVfbGluaywgbnNtYl90MF9saW5rLCBuc21iX3Rlc3RfbGluaywgbnNtYjJfbGluaywgbnNtYjIsIG5zbWIzKVxuYGBgIn0= -->
-<pre class="r"><code>
+nsmb4
+
 #rm(loop, loop_list, nsmb_test,nsmb_t0, nsmb_node, nsmb_node_link, nsmb_t0_link, nsmb_test_link, nsmb2_link, nsmb2, nsmb3)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIldlYiBTY3JhcGVyIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KDQoNCmBgYHtyfQ0KaW5zdGFsbC5wYWNrYWdlcygicnZlc3QiKQ0KDQojdGVzdA0KbGlicmFyeSgicnZlc3QiKQ0KDQpwYWNrYWdlcyA9IGMoJ3JtYXJrZG93bicsICdwbHlyJywgJ2RwbHlyJywnZ2dwbG90MicsICdyZWFkcicsICd0aWR5cicsICdzdHJpbmdyJywgICdrbml0cicsICdzcGFya2x5cicsICdzaGlueScsICdkYXRhLnRhYmxlJywgJ3pvbycsJ2Zhc3R0aW1lJywidHdpdHRlUiIsIm9wZW5zc2wiLCJodHRwdXYiICwgJ3J2ZXN0JywgJ2h0dHInLCdqc29ubGl0ZScsJ2x1YnJpZGF0ZScsICd0d2l0dGVSJykNCg0KcGFja2FnZS5jaGVjayA8LSBsYXBwbHkocGFja2FnZXMsIEZVTiA9IGZ1bmN0aW9uKHgpIHsNCiAgICBpZiAoIXJlcXVpcmUoeCwgY2hhcmFjdGVyLm9ubHkgPSBUUlVFKSkgew0KICAgICAgICBpbnN0YWxsLnBhY2thZ2VzKHgsIGRlcGVuZGVuY2llcyA9IFRSVUUpDQogICAgICAgIGxpYnJhcnkoeCwgY2hhcmFjdGVyLm9ubHkgPSBUUlVFLCBxdWlldGx5ID0gVFJVRSwgd2Fybi5jb25mbGljdHMgPSBGQUxTRSkNCiAgICB9DQp9KQ0KDQoNCmBgYA0KDQpgYGB7cn0NCnZvbHVtZSA8LSAxDQoNCmlzc3VlIDwtIDENCg0KbnNtYiA8LSByZWFkX2h0bWwocGFzdGUwKCJodHRwczovL3d3dy5uYXR1cmUuY29tL25zbWIvdm9sdW1lcy8iLHZvbHVtZSwiL2lzc3Vlcy8iLGlzc3VlKSkNCg0KI25zbWIgPC0gcmVhZF9odG1sKCJodHRwczovL3d3dy5uYXR1cmUuY29tL25zbWIvdm9sdW1lcy8yNS9pc3N1ZXMvMTAiKSANCg0KbnNtYg0KYGBgDQoNCg0KYGBge3J9DQoNCm5hdHVyZV9hcnRpY2xlX2V4dHJhY3RvciA8LSBmdW5jdGlvbih2b2x1bWUsaXNzdWUpIHsNCiAgICAgICAgICAgbnNtYiA8LSByZWFkX2h0bWwocGFzdGUwKCJodHRwczovL3d3dy5uYXR1cmUuY29tL25zbWIvdm9sdW1lcy8iLHZvbHVtZSwiL2lzc3Vlcy8iLGlzc3VlKSkNCg0KfQ0KDQpgYGANCg0KDQpgYGB7cn0NCg0KDQpsb29wX2xpc3QgPC0gMToyMA0KDQpuc21iX3Rlc3QgPC0gYXMuY2hhcmFjdGVyKCkNCm5zbWJfdGVzdF9saW5rIDwtIGFzLmNoYXJhY3RlcigpDQoNCm5hdHVyZV9kYXRhIDwtIGZ1bmN0aW9uKGxvb3BfdmVjdCkgew0KICANCiAgDQogICAgI2FydGljbGUgdGl0bGUNCm5zbWJfbm9kZSA8LSAgbnNtYiAlPiUgaHRtbF9ub2RlKHBhc3RlMCgiLnBiMzA6bnRoLWNoaWxkKCIse3tsb29wX3ZlY3R9fSwiKSBhIikpICU+JSBodG1sX3RleHQoKSAgJT4lIA0KICAgICAgICAjIFRyaW0gYWRkaXRpb25hbCB3aGl0ZSBzcGFjZQ0KICAgICAgICBzdHJfdHJpbSgpICU+JSAgICAgICAgICAgICAgICAgICAgICAgDQogICAgICAgICMgQ29udmVydCB0aGUgbGlzdCBpbnRvIGEgdmVjdG9yDQogICAgICAgIHVubGlzdCgpDQoNCm5zbWJfdDAgPC0gc3RyX3RyaW0oc2FwcGx5KHN0cnNwbGl0KG5zbWJfbm9kZSwgIlxuIiksICJbIiwgMSkpIA0KDQpuc21iX3Rlc3QgPC0gcmJpbmQobnNtYl90ZXN0LCBuc21iX3QwKQ0KDQoNCiMgYXJ0aWNsZSBsaW5rDQpuc21iX25vZGVfbGluayA8LSAgbnNtYiAlPiUgaHRtbF9ub2RlKHBhc3RlMCgiLnBiMzA6bnRoLWNoaWxkKCIse3tsb29wX3ZlY3R9fSwiKSBhIikpICU+JSBodG1sX2F0dHIoJ2hyZWYnKSAgJT4lIA0KICAgICAgICAjIFRyaW0gYWRkaXRpb25hbCB3aGl0ZSBzcGFjZQ0KICAgICAgICBzdHJfdHJpbSgpICU+JSAgICAgICAgICAgICAgICAgICAgICAgDQogICAgICAgICMgQ29udmVydCB0aGUgbGlzdCBpbnRvIGEgdmVjdG9yDQogICAgICAgIHVubGlzdCgpDQoNCm5zbWJfdDBfbGluayA8LSBzdHJfdHJpbShuc21iX25vZGVfbGluaykgDQoNCm5zbWJfdGVzdF9saW5rIDwtIHJiaW5kKG5zbWJfdGVzdF9saW5rLCBuc21iX3QwX2xpbmspDQoNCg0KbnNtYjJfbGluayA8LSBuc21iX3Rlc3RfbGluayAlPiUgZGF0YS5mcmFtZSgpICU+JSB0cmFuc211dGUobGluayA9IChwYXN0ZTAoImh0dHBzOi8vd3d3Lm5hdHVyZS5jb20iLC4pKSkNCnJvdy5uYW1lcyhuc21iMl9saW5rKSA8LSBOVUxMDQoNCm5zbWIyIDwtIG5zbWJfdGVzdCAlPiUgZGF0YS5mcmFtZSgpICU+JSBkcGx5cjo6cmVuYW1lKC4sInRpdGxlIiA9ICIuIikNCnJvdy5uYW1lcyhuc21iMikgPC0gTlVMTA0KDQpuc21iMyA8LSBjYmluZChuc21iMixuc21iMl9saW5rLGlzc3VlLHZvbHVtZSkgJT4lIG11dGF0ZShuY2hhcl90aXRsZSA9IG5jaGFyKGFzLmNoYXJhY3Rlcih0aXRsZSkpLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBuY2hhcl9saW5rICA9IG5jaGFyKGxpbmspLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBuY2hhcl90b3RhbCA9IG5jaGFyKGFzLmNoYXJhY3Rlcih0aXRsZSkpICsgbmNoYXIobGluaykpDQpwcmludChuc21iMykNCn0NCg0KbmF0dXJlX2RhdGEobG9vcF9saXN0KQ0KDQpsb3BfZGF0IDwtIGxhcHBseShsb29wX2xpc3QsIG5hdHVyZV9kYXRhKQ0KDQoNCm5zbWIyX2xpbmsgPC0gbnNtYl90ZXN0X2xpbmsgJT4lIGRhdGEuZnJhbWUoKSAlPiUgdHJhbnNtdXRlKGxpbmsgPSAocGFzdGUwKCJodHRwczovL3d3dy5uYXR1cmUuY29tIiwuKSkpDQpyb3cubmFtZXMobnNtYjJfbGluaykgPC0gTlVMTA0KDQpuc21iMiA8LSBuc21iX3Rlc3QgJT4lIGRhdGEuZnJhbWUoKSAlPiUgZHBseXI6OnJlbmFtZSguLCJ0aXRsZSIgPSAiLiIpDQpyb3cubmFtZXMobnNtYjIpIDwtIE5VTEwNCg0KbmNoYXIoYXMuY2hhcmFjdGVyKG5zbWIyJHRpdGxlKSkNCg0KbnNtYjMgPC0gY2JpbmQobnNtYjIsbnNtYjJfbGluayxpc3N1ZSx2b2x1bWUpICU+JSBtdXRhdGUobmNoYXJfdGl0bGUgPSBuY2hhcihhcy5jaGFyYWN0ZXIodGl0bGUpKSwNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbmNoYXJfbGluayAgPSBuY2hhcihsaW5rKSwNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbmNoYXJfdG90YWwgPSBuY2hhcihhcy5jaGFyYWN0ZXIodGl0bGUpKSArIG5jaGFyKGxpbmspKQ0KDQoNCmBgYA0KDQoNCg0KYGBge3J9DQpuc21iXzEgPC0gbnNtYiAlPiUgaHRtbF9ub2RlKHBhc3RlMCgiLnBiMzA6bnRoLWNoaWxkKCIsMSwiKSBhIikpICU+JSBodG1sX3RleHQoKSAgICU+JSANCiAgICAgICAgIyBUcmltIGFkZGl0aW9uYWwgd2hpdGUgc3BhY2UNCiAgICAgICAgc3RyX3RyaW0oKSAlPiUgICAgICAgICAgICAgICAgICAgICAgIA0KICAgICAgICAjIENvbnZlcnQgdGhlIGxpc3QgaW50byBhIHZlY3Rvcg0KICAgICAgICB1bmxpc3QoKQ0KDQpuc21iXzENCm5zbWJfdDAgPC0gc3RyX3RyaW0oc2FwcGx5KHN0cnNwbGl0KG5zbWJfMSwgIlxuIiksICJbIiwgMSkpIA0KDQpuc21iX3QwDQpgYGANCg0KYGBge3IgYXJ0Y2lsZSB0aXRsZX0NCg0KbG9vcF9saXN0IDwtIDE6MjANCg0KbnNtYl90ZXN0IDwtIGFzLmNoYXJhY3RlcigpDQpuc21iX3Rlc3RfbGluayA8LSBhcy5jaGFyYWN0ZXIoKQ0KDQoNCmZvciAobG9vcCBpbiBsb29wX2xpc3Qpew0KICAjYXJ0aWNsZSB0aXRsZQ0KbnNtYl9ub2RlIDwtICBuc21iICU+JSBodG1sX25vZGUocGFzdGUwKCIucGIzMDpudGgtY2hpbGQoIixsb29wLCIpIGEiKSkgJT4lIGh0bWxfdGV4dCgpICAlPiUgDQogICAgICAgICMgVHJpbSBhZGRpdGlvbmFsIHdoaXRlIHNwYWNlDQogICAgICAgIHN0cl90cmltKCkgJT4lICAgICAgICAgICAgICAgICAgICAgICANCiAgICAgICAgIyBDb252ZXJ0IHRoZSBsaXN0IGludG8gYSB2ZWN0b3INCiAgICAgICAgdW5saXN0KCkNCg0KbnNtYl90MCA8LSBzdHJfdHJpbShzYXBwbHkoc3Ryc3BsaXQobnNtYl9ub2RlLCAiXG4iKSwgIlsiLCAxKSkgDQoNCm5zbWJfdGVzdCA8LSByYmluZChuc21iX3Rlc3QsIG5zbWJfdDApDQoNCg0KIyBhcnRpY2xlIGxpbmsNCm5zbWJfbm9kZV9saW5rIDwtICBuc21iICU+JSBodG1sX25vZGUocGFzdGUwKCIucGIzMDpudGgtY2hpbGQoIixsb29wLCIpIGEiKSkgJT4lIGh0bWxfYXR0cignaHJlZicpICAlPiUgDQogICAgICAgICMgVHJpbSBhZGRpdGlvbmFsIHdoaXRlIHNwYWNlDQogICAgICAgIHN0cl90cmltKCkgJT4lICAgICAgICAgICAgICAgICAgICAgICANCiAgICAgICAgIyBDb252ZXJ0IHRoZSBsaXN0IGludG8gYSB2ZWN0b3INCiAgICAgICAgdW5saXN0KCkNCg0KbnNtYl90MF9saW5rIDwtIHN0cl90cmltKG5zbWJfbm9kZV9saW5rKSANCg0KbnNtYl90ZXN0X2xpbmsgPC0gcmJpbmQobnNtYl90ZXN0X2xpbmssIG5zbWJfdDBfbGluaykNCg0KDQoNCn0NCg0KbnNtYjJfbGluayA8LSBuc21iX3Rlc3RfbGluayAlPiUgZGF0YS5mcmFtZSgpICU+JSB0cmFuc211dGUobGluayA9IChwYXN0ZTAoImh0dHBzOi8vd3d3Lm5hdHVyZS5jb20iLC4pKSkNCnJvdy5uYW1lcyhuc21iMl9saW5rKSA8LSBOVUxMDQoNCm5zbWIyIDwtIG5zbWJfdGVzdCAlPiUgZGF0YS5mcmFtZSgpICU+JSBkcGx5cjo6cmVuYW1lKC4sInRpdGxlIiA9ICIuIikNCnJvdy5uYW1lcyhuc21iMikgPC0gTlVMTA0KDQpuY2hhcihhcy5jaGFyYWN0ZXIobnNtYjIkdGl0bGUpKQ0KDQpuc21iMyA8LSBjYmluZChuc21iMixuc21iMl9saW5rLGlzc3VlLHZvbHVtZSkgJT4lIG11dGF0ZShuY2hhcl90aXRsZSA9IG5jaGFyKGFzLmNoYXJhY3Rlcih0aXRsZSkpLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBuY2hhcl9saW5rICA9IG5jaGFyKGxpbmspLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBuY2hhcl90b3RhbCA9IG5jaGFyKGFzLmNoYXJhY3Rlcih0aXRsZSkpICsgbmNoYXIobGluaykpDQoNCg0KbnNtYjQgPC0gbnNtYjMgJT4lIG11dGF0ZShoYXNodGFnID0gIiNzdHJ1Y3R1cmFsYmlvICNuc21iICNiaW9waHlzaWNzIEBuYXR1cmUgQE5hdHVyZVNNQiIsDQogICAgICAgICAgICAgICAgICAgICAgICAgIHR3ZWV0X3RleHQgPSBwYXN0ZTAoaGFzaHRhZywiICIsbGluayksDQogICAgICAgICAgICAgICAgICAgICAgICAgIG5jaGFyX3R3ZWV0ID0gbmNoYXIoYXMuY2hhcmFjdGVyKHR3ZWV0X3RleHQpKSkgJT4lDQogICAgICAgICAgICAgICAgICAgZmlsdGVyKGlzLm5hKHRpdGxlKSAhPSBUKQ0KDQpuc21iNA0KDQojcm0obG9vcCwgbG9vcF9saXN0LCBuc21iX3Rlc3QsbnNtYl90MCwgbnNtYl9ub2RlLCBuc21iX25vZGVfbGluaywgbnNtYl90MF9saW5rLCBuc21iX3Rlc3RfbGluaywgbnNtYjJfbGluaywgbnNtYjIsIG5zbWIzKQ0KYGBgDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIldlYiBTY3JhcGVyIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQpwYXJhbXM6DQogIG5iX2lkOiAiMDAxIg0KLS0tDQoNCg0KYGBge3IgbG9hZCBwYWNrYWdlc30NCg0KcGFja2FnZXMgPSBjKCdybWFya2Rvd24nLCAncGx5cicsICdkcGx5cicsJ2dncGxvdDInLCAncmVhZHInLCAndGlkeXInLCAnc3RyaW5ncicsICAna25pdHInLCAnc3BhcmtseXInLCAnc2hpbnknLCAnZGF0YS50YWJsZScsICd6b28nLCdmYXN0dGltZScsInR3aXR0ZVIiLCJvcGVuc3NsIiwiaHR0cHV2IiAsICdydmVzdCcsICdodHRyJywnanNvbmxpdGUnLCdsdWJyaWRhdGUnLCAndHdpdHRlUicpDQoNCnBhY2thZ2UuY2hlY2sgPC0gbGFwcGx5KHBhY2thZ2VzLCBGVU4gPSBmdW5jdGlvbih4KSB7DQogICAgaWYgKCFyZXF1aXJlKHgsIGNoYXJhY3Rlci5vbmx5ID0gVFJVRSkpIHsNCiAgICAgICAgaW5zdGFsbC5wYWNrYWdlcyh4LCBkZXBlbmRlbmNpZXMgPSBUUlVFKQ0KICAgICAgICBsaWJyYXJ5KHgsIGNoYXJhY3Rlci5vbmx5ID0gVFJVRSwgcXVpZXRseSA9IFRSVUUsIHdhcm4uY29uZmxpY3RzID0gRkFMU0UpDQogICAgfQ0KfSkNCg0KDQpgYGANCg0KDQoNCg0KYGBge3IgdGVzdGluZyBydmVzdH0NCg0KIyBwdWxsIGluIHNvbWUgaHRtbA0KDQpuc21iIDwtIHJlYWRfaHRtbCgiaHR0cHM6Ly93d3cubmF0dXJlLmNvbS9uc21iL3ZvbHVtZXMvMjUvaXNzdWVzLzEwIikgDQoNCiMgaHR0cHM6Ly93d3cubmF0dXJlLmNvbS9uc21iL3ZvbHVtZXMvMjUvaXNzdWVzLzEwDQoNCmBgYA0KDQoNCg0KDQpgYGB7cn0NCg0KDQpuc21iICU+JSBydmVzdDo6aHRtbF90ZXh0KCkNCg0KYGBgDQoNCg0KDQoNCg0KDQpgYGB7cn0NCg0KbnNtYiAlPiUgaHRtbF9ub2RlKHBhc3RlMCgiLnBiMzA6bnRoLWNoaWxkKDEpIGEiKSkgJT4lIGh0bWxfdGV4dCgpDQoNCg0KbnNtYiAlPiUgaHRtbF9ub2RlKHBhc3RlMCgiLnBiMzA6bnRoLWNoaWxkKDIpIGEiKSkgJT4lIGh0bWxfdGV4dCgpDQoNCg0KDQpuc21iICU+JSBodG1sX25vZGUocGFzdGUwKCIucGIzMDpudGgtY2hpbGQoNykgYSIpKSAlPiUgaHRtbF90ZXh0KCkNCg0KDQoNCmBgYA0KDQoNCg0KDQoNCg0KYGBge3J9DQoNCiMgdGVzdGluZyBjbGVhbmluZyB1cCB0ZXh0DQpuc21iICU+JSBodG1sX25vZGUocGFzdGUwKCIucGIzMDpudGgtY2hpbGQoNykgYSIpKSAlPiUgaHRtbF90ZXh0MigpDQoNCg0KYGBgDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQpgYGB7cn0NCnZvbHVtZSA8LSAxDQoNCmlzc3VlIDwtIDENCg0KbnNtYiA8LSByZWFkX2h0bWwocGFzdGUwKCJodHRwczovL3d3dy5uYXR1cmUuY29tL25zbWIvdm9sdW1lcy8iLHZvbHVtZSwiL2lzc3Vlcy8iLGlzc3VlKSkNCg0KI25zbWIgPC0gcmVhZF9odG1sKCJodHRwczovL3d3dy5uYXR1cmUuY29tL25zbWIvdm9sdW1lcy8yNS9pc3N1ZXMvMTAiKSANCg0KbnNtYg0KDQoNCm5zbWIgJT4lIGh0bWxfbm9kZShwYXN0ZTAoIi5wYjMwOm50aC1jaGlsZCgiLDksIikgYSIpKSAlPiUgaHRtbF90ZXh0KCkNCg0KYGBgDQoNCg0KYGBge3J9DQoNCnN1YmpvdXJuYWwgPC0gIm5zbWIiDQoNCm5hdHVyZV9hcnRpY2xlX2V4dHJhY3RvciA8LSBmdW5jdGlvbih2b2x1bWUsaXNzdWUpIHsNCiAgICAgICAgICAgbnNtYiA8LSByZWFkX2h0bWwocGFzdGUwKCJodHRwczovL3d3dy5uYXR1cmUuY29tLywiLHN1YmpvdXJuYWwsIiwvdm9sdW1lcy8iLHZvbHVtZSwiL2lzc3Vlcy8iLGlzc3VlKSkNCg0KfQ0KDQpgYGANCg0KDQpgYGB7cn0NCg0KDQpsb29wX2xpc3QgPC0gMToyMA0KDQpuc21iX3Rlc3QgPC0gYXMuY2hhcmFjdGVyKCkNCm5zbWJfdGVzdF9saW5rIDwtIGFzLmNoYXJhY3RlcigpDQoNCm5hdHVyZV9kYXRhIDwtIGZ1bmN0aW9uKGxvb3BfdmVjdCkgew0KICANCiAgDQogICAgI2FydGljbGUgdGl0bGUNCm5zbWJfbm9kZSA8LSAgbnNtYiAlPiUgaHRtbF9ub2RlKHBhc3RlMCgiLnBiMzA6bnRoLWNoaWxkKCIse3tsb29wX3ZlY3R9fSwiKSBhIikpICU+JSBodG1sX3RleHQoKSAgJT4lIA0KICAgICAgICAjIFRyaW0gYWRkaXRpb25hbCB3aGl0ZSBzcGFjZQ0KICAgICAgICBzdHJfdHJpbSgpICU+JSAgICAgICAgICAgICAgICAgICAgICAgDQogICAgICAgICMgQ29udmVydCB0aGUgbGlzdCBpbnRvIGEgdmVjdG9yDQogICAgICAgIHVubGlzdCgpDQoNCm5zbWJfdDAgPC0gc3RyX3RyaW0oc2FwcGx5KHN0cnNwbGl0KG5zbWJfbm9kZSwgIlxuIiksICJbIiwgMSkpIA0KDQpuc21iX3Rlc3QgPC0gcmJpbmQobnNtYl90ZXN0LCBuc21iX3QwKQ0KDQoNCiMgYXJ0aWNsZSBsaW5rDQpuc21iX25vZGVfbGluayA8LSAgbnNtYiAlPiUgaHRtbF9ub2RlKHBhc3RlMCgiLnBiMzA6bnRoLWNoaWxkKCIse3tsb29wX3ZlY3R9fSwiKSBhIikpICU+JSBodG1sX2F0dHIoJ2hyZWYnKSAgJT4lIA0KICAgICAgICAjIFRyaW0gYWRkaXRpb25hbCB3aGl0ZSBzcGFjZQ0KICAgICAgICBzdHJfdHJpbSgpICU+JSAgICAgICAgICAgICAgICAgICAgICAgDQogICAgICAgICMgQ29udmVydCB0aGUgbGlzdCBpbnRvIGEgdmVjdG9yDQogICAgICAgIHVubGlzdCgpDQoNCm5zbWJfdDBfbGluayA8LSBzdHJfdHJpbShuc21iX25vZGVfbGluaykgDQoNCm5zbWJfdGVzdF9saW5rIDwtIHJiaW5kKG5zbWJfdGVzdF9saW5rLCBuc21iX3QwX2xpbmspDQoNCg0KbnNtYjJfbGluayA8LSBuc21iX3Rlc3RfbGluayAlPiUgZGF0YS5mcmFtZSgpICU+JSB0cmFuc211dGUobGluayA9IChwYXN0ZTAoImh0dHBzOi8vd3d3Lm5hdHVyZS5jb20iLC4pKSkNCnJvdy5uYW1lcyhuc21iMl9saW5rKSA8LSBOVUxMDQoNCm5zbWIyIDwtIG5zbWJfdGVzdCAlPiUgZGF0YS5mcmFtZSgpICU+JSBkcGx5cjo6cmVuYW1lKC4sInRpdGxlIiA9ICIuIikNCnJvdy5uYW1lcyhuc21iMikgPC0gTlVMTA0KDQpuc21iMyA8LSBjYmluZChuc21iMixuc21iMl9saW5rLGlzc3VlLHZvbHVtZSkgJT4lIG11dGF0ZShuY2hhcl90aXRsZSA9IG5jaGFyKGFzLmNoYXJhY3Rlcih0aXRsZSkpLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBuY2hhcl9saW5rICA9IG5jaGFyKGxpbmspLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBuY2hhcl90b3RhbCA9IG5jaGFyKGFzLmNoYXJhY3Rlcih0aXRsZSkpICsgbmNoYXIobGluaykpDQpwcmludChuc21iMykNCn0NCg0KbmF0dXJlX2RhdGEobG9vcF9saXN0KQ0KDQpsb3BfZGF0IDwtIGxhcHBseShsb29wX2xpc3QsIG5hdHVyZV9kYXRhKQ0KDQoNCm5zbWIyX2xpbmsgPC0gbnNtYl90ZXN0X2xpbmsgJT4lIGRhdGEuZnJhbWUoKSAlPiUgdHJhbnNtdXRlKGxpbmsgPSAocGFzdGUwKCJodHRwczovL3d3dy5uYXR1cmUuY29tIiwuKSkpDQpyb3cubmFtZXMobnNtYjJfbGluaykgPC0gTlVMTA0KDQpuc21iMiA8LSBuc21iX3Rlc3QgJT4lIGRhdGEuZnJhbWUoKSAlPiUgZHBseXI6OnJlbmFtZSguLCJ0aXRsZSIgPSAiLiIpDQpyb3cubmFtZXMobnNtYjIpIDwtIE5VTEwNCg0KbmNoYXIoYXMuY2hhcmFjdGVyKG5zbWIyJHRpdGxlKSkNCg0KbnNtYjMgPC0gY2JpbmQobnNtYjIsbnNtYjJfbGluayxpc3N1ZSx2b2x1bWUpICU+JSBtdXRhdGUobmNoYXJfdGl0bGUgPSBuY2hhcihhcy5jaGFyYWN0ZXIodGl0bGUpKSwNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbmNoYXJfbGluayAgPSBuY2hhcihsaW5rKSwNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbmNoYXJfdG90YWwgPSBuY2hhcihhcy5jaGFyYWN0ZXIodGl0bGUpKSArIG5jaGFyKGxpbmspKQ0KDQoNCmBgYA0KDQoNCg0KYGBge3J9DQpuc21iXzEgPC0gbnNtYiAlPiUgaHRtbF9ub2RlKHBhc3RlMCgiLnBiMzA6bnRoLWNoaWxkKCIsMSwiKSBhIikpICU+JSBodG1sX3RleHQoKSAgICU+JSANCiAgICAgICAgIyBUcmltIGFkZGl0aW9uYWwgd2hpdGUgc3BhY2UNCiAgICAgICAgc3RyX3RyaW0oKSAlPiUgICAgICAgICAgICAgICAgICAgICAgIA0KICAgICAgICAjIENvbnZlcnQgdGhlIGxpc3QgaW50byBhIHZlY3Rvcg0KICAgICAgICB1bmxpc3QoKQ0KDQpuc21iXzENCm5zbWJfdDAgPC0gc3RyX3RyaW0oc2FwcGx5KHN0cnNwbGl0KG5zbWJfMSwgIlxuIiksICJbIiwgMSkpIA0KDQpuc21iX3QwDQpgYGANCg0KYGBge3IgYXJ0Y2lsZSB0aXRsZX0NCg0KbG9vcF9saXN0IDwtIDE6MjANCg0KbnNtYl90ZXN0IDwtIGFzLmNoYXJhY3RlcigpDQpuc21iX3Rlc3RfbGluayA8LSBhcy5jaGFyYWN0ZXIoKQ0KDQoNCmZvciAobG9vcCBpbiBsb29wX2xpc3Qpew0KICAjYXJ0aWNsZSB0aXRsZQ0KbnNtYl9ub2RlIDwtICBuc21iICU+JSBodG1sX25vZGUocGFzdGUwKCIucGIzMDpudGgtY2hpbGQoIixsb29wLCIpIGEiKSkgJT4lIGh0bWxfdGV4dCgpICAlPiUgDQogICAgICAgICMgVHJpbSBhZGRpdGlvbmFsIHdoaXRlIHNwYWNlDQogICAgICAgIHN0cl90cmltKCkgJT4lICAgICAgICAgICAgICAgICAgICAgICANCiAgICAgICAgIyBDb252ZXJ0IHRoZSBsaXN0IGludG8gYSB2ZWN0b3INCiAgICAgICAgdW5saXN0KCkNCg0KbnNtYl90MCA8LSBzdHJfdHJpbShzYXBwbHkoc3Ryc3BsaXQobnNtYl9ub2RlLCAiXG4iKSwgIlsiLCAxKSkgDQoNCm5zbWJfdGVzdCA8LSByYmluZChuc21iX3Rlc3QsIG5zbWJfdDApDQoNCg0KIyBhcnRpY2xlIGxpbmsNCm5zbWJfbm9kZV9saW5rIDwtICBuc21iICU+JSBodG1sX25vZGUocGFzdGUwKCIucGIzMDpudGgtY2hpbGQoIixsb29wLCIpIGEiKSkgJT4lIGh0bWxfYXR0cignaHJlZicpICAlPiUgDQogICAgICAgICMgVHJpbSBhZGRpdGlvbmFsIHdoaXRlIHNwYWNlDQogICAgICAgIHN0cl90cmltKCkgJT4lICAgICAgICAgICAgICAgICAgICAgICANCiAgICAgICAgIyBDb252ZXJ0IHRoZSBsaXN0IGludG8gYSB2ZWN0b3INCiAgICAgICAgdW5saXN0KCkNCg0KbnNtYl90MF9saW5rIDwtIHN0cl90cmltKG5zbWJfbm9kZV9saW5rKSANCg0KbnNtYl90ZXN0X2xpbmsgPC0gcmJpbmQobnNtYl90ZXN0X2xpbmssIG5zbWJfdDBfbGluaykNCg0KDQoNCn0NCg0KbnNtYjJfbGluayA8LSBuc21iX3Rlc3RfbGluayAlPiUgZGF0YS5mcmFtZSgpICU+JSB0cmFuc211dGUobGluayA9IChwYXN0ZTAoImh0dHBzOi8vd3d3Lm5hdHVyZS5jb20iLC4pKSkNCnJvdy5uYW1lcyhuc21iMl9saW5rKSA8LSBOVUxMDQoNCm5zbWIyIDwtIG5zbWJfdGVzdCAlPiUgZGF0YS5mcmFtZSgpICU+JSBkcGx5cjo6cmVuYW1lKC4sInRpdGxlIiA9ICIuIikNCnJvdy5uYW1lcyhuc21iMikgPC0gTlVMTA0KDQpuY2hhcihhcy5jaGFyYWN0ZXIobnNtYjIkdGl0bGUpKQ0KDQpuc21iMyA8LSBjYmluZChuc21iMixuc21iMl9saW5rLGlzc3VlLHZvbHVtZSkgJT4lIG11dGF0ZShuY2hhcl90aXRsZSA9IG5jaGFyKGFzLmNoYXJhY3Rlcih0aXRsZSkpLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBuY2hhcl9saW5rICA9IG5jaGFyKGxpbmspLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBuY2hhcl90b3RhbCA9IG5jaGFyKGFzLmNoYXJhY3Rlcih0aXRsZSkpICsgbmNoYXIobGluaykpDQoNCg0KbnNtYjQgPC0gbnNtYjMgJT4lIG11dGF0ZShoYXNodGFnID0gIiNzdHJ1Y3R1cmFsYmlvICNuc21iICNiaW9waHlzaWNzIEBuYXR1cmUgQE5hdHVyZVNNQiIsDQogICAgICAgICAgICAgICAgICAgICAgICAgIHR3ZWV0X3RleHQgPSBwYXN0ZTAoaGFzaHRhZywiICIsbGluayksDQogICAgICAgICAgICAgICAgICAgICAgICAgIG5jaGFyX3R3ZWV0ID0gbmNoYXIoYXMuY2hhcmFjdGVyKHR3ZWV0X3RleHQpKSkgJT4lDQogICAgICAgICAgICAgICAgICAgZmlsdGVyKGlzLm5hKHRpdGxlKSAhPSBUKQ0KDQpuc21iNA0KDQojcm0obG9vcCwgbG9vcF9saXN0LCBuc21iX3Rlc3QsbnNtYl90MCwgbnNtYl9ub2RlLCBuc21iX25vZGVfbGluaywgbnNtYl90MF9saW5rLCBuc21iX3Rlc3RfbGluaywgbnNtYjJfbGluaywgbnNtYjIsIG5zbWIzKQ0KYGBgDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQo=</div>
 
 
 
@@ -560,7 +502,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("003_nature_web_scraper_poc_apply.Rmd");
+  window.initializeSourceEmbed("001_webscraper_poc.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>

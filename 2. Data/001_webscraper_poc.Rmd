@@ -1,15 +1,12 @@
 ---
 title: "Web Scraper"
 output: html_notebook
+params:
+  nb_id: "001"
 ---
 
 
-
-```{r}
-install.packages("rvest")
-
-#test
-library("rvest")
+```{r load packages}
 
 packages = c('rmarkdown', 'plyr', 'dplyr','ggplot2', 'readr', 'tidyr', 'stringr',  'knitr', 'sparklyr', 'shiny', 'data.table', 'zoo','fasttime',"twitteR","openssl","httpuv" , 'rvest', 'httr','jsonlite','lubridate', 'twitteR')
 
@@ -23,6 +20,76 @@ package.check <- lapply(packages, FUN = function(x) {
 
 ```
 
+
+
+
+```{r testing rvest}
+
+# pull in some html
+
+nsmb <- read_html("https://www.nature.com/nsmb/volumes/25/issues/10") 
+
+# https://www.nature.com/nsmb/volumes/25/issues/10
+
+```
+
+
+
+
+```{r}
+
+
+nsmb %>% rvest::html_text()
+
+```
+
+
+
+
+
+
+```{r}
+
+nsmb %>% html_node(paste0(".pb30:nth-child(1) a")) %>% html_text()
+
+
+nsmb %>% html_node(paste0(".pb30:nth-child(2) a")) %>% html_text()
+
+
+
+nsmb %>% html_node(paste0(".pb30:nth-child(7) a")) %>% html_text()
+
+
+
+```
+
+
+
+
+
+
+```{r}
+
+# testing cleaning up text
+nsmb %>% html_node(paste0(".pb30:nth-child(7) a")) %>% html_text2()
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```{r}
 volume <- 1
 
@@ -33,13 +100,19 @@ nsmb <- read_html(paste0("https://www.nature.com/nsmb/volumes/",volume,"/issues/
 #nsmb <- read_html("https://www.nature.com/nsmb/volumes/25/issues/10") 
 
 nsmb
+
+
+nsmb %>% html_node(paste0(".pb30:nth-child(",9,") a")) %>% html_text()
+
 ```
 
 
 ```{r}
 
+subjournal <- "nsmb"
+
 nature_article_extractor <- function(volume,issue) {
-           nsmb <- read_html(paste0("https://www.nature.com/nsmb/volumes/",volume,"/issues/",issue))
+           nsmb <- read_html(paste0("https://www.nature.com/,",subjournal,",/volumes/",volume,"/issues/",issue))
 
 }
 

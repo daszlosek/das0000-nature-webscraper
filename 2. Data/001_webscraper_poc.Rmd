@@ -86,12 +86,16 @@ nsmb %>% html_node(paste0(".pb30:nth-child(7) a")) %>% html_text2()
 
 subjournal <- "nsmb"
 
-subjournal_html_parser <- function(subjournal,volume,issue,child_node) {
+subjournal_html_parser <- function(subjournal = "nsmb",volume = 1,issue = 1,child_node = 1) {
           tmp_html <- read_html(paste0("https://www.nature.com/",subjournal,"/volumes/",volume,"/issues/",issue))
           
           
           # parse html text
-          tmp_html %>% html_node(paste0(".pb30:nth-child(",child_node,") a")) %>% html_text2()
+          parsed_title <- tmp_html %>% html_node(paste0(".pb30:nth-child(",child_node,") a")) %>% html_text2()
+          bind_cols(subjournal = subjournal,
+                    volume = volume,
+                    issue = issue,
+                    parsed_title = parsed_title)
 }
 
 
@@ -103,39 +107,38 @@ subjournal_html_parser(subjournal = "nsmb",volume = 1,issue = 1,child_node = 7)
 
 
 
-
-
-
-
-
-
 ```{r}
-volume <- 1
 
-issue <- 1
-
-nsmb <- read_html(paste0("https://www.nature.com/nsmb/volumes/",volume,"/issues/",issue))
-
-#nsmb <- read_html("https://www.nature.com/nsmb/volumes/25/issues/10") 
-
-nsmb
+# messing around with lapply 
 
 
-nsmb %>% html_node(paste0(".pb30:nth-child(",9,") a")) %>% html_text()
+tictoc::tic()
+test_list <- lapply(1:2, subjournal_html_parser, subjournal = "nsmb", issue = c(1,2), volume = 1)
+tictoc::toc()
+
+bind_rows(test_list)
+
+
+
+
 
 ```
 
 
+
 ```{r}
+tictoc::tic()
+test  <- mapply(subjournal_html_parser, child_node = 1:20, issue = c(1,2), subjournal = "nsmb",volume = 1) 
+tictoc::toc()
+test2 <- test %>% data.frame(.) %>% t()
 
-subjournal <- "nsmb"
+bind_rows(test)
 
-nature_article_extractor <- function(volume,issue) {
-           nsmb <- read_html(paste0("https://www.nature.com/,",subjournal,",/volumes/",volume,"/issues/",issue))
-
-}
-
+#,newcol = c("subjournal","volume","issue","title")
 ```
+
+
+
 
 
 ```{r}

@@ -6,7 +6,6 @@ output: html_notebook
 
 
 ```{r}
-install.packages("rvest")
 
 #test
 library("rvest")

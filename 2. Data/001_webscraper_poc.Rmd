@@ -192,8 +192,15 @@ article_data_raw <- bind_rows(article_combination_list) %>% janitor::clean_names
 
 
 
+```{r}
 
 
+#list out some of the articles
+journals <- c("nsmb","leu","natcancer","natcardiovascres","nmeth")
+
+
+
+```
 
 
 

@@ -33,5 +33,22 @@ cmapply <- readr::read_rds(here::here("2. Data", paste0("001","cmapply.rds")))
 journal_code_vector <- readr::read_rds(here::here("2. Data", paste0("001","_journal_code_vector.rds")))
 
 
+journal_code_vector
+
 ```
 
+
+
+
+
+
+```{r pull article data}
+
+# get article
+# it is not as  efficient as I would like but then again I am webscrapping almost 30 years of article titles
+article_combination_list <- cmapply(issue = 1:2, child_node = 1:2, subjournal = c("nsmb"),volume = 1:2, FUN=nature_html_parser) 
+
+
+
+
+```

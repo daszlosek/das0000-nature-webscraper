@@ -1,5 +1,5 @@
 ---
-title: "Web Scraper"
+title: "Web Scraper POC"
 output: html_notebook
 params:
   nb_id: "001"
@@ -8,7 +8,7 @@ params:
 
 ```{r load packages}
 
-packages = c('rmarkdown', 'plyr', 'dplyr','ggplot2', 'readr', 'tidyr', 'stringr',  'knitr', 'sparklyr', 'shiny', 'data.table', 'zoo','fasttime',"twitteR","openssl","httpuv" , 'rvest', 'httr','jsonlite','lubridate', 'twitteR')
+packages = c('rmarkdown', 'plyr', 'dplyr','ggplot2', 'readr', 'tidyr', 'stringr',  'knitr', 'sparklyr', 'shiny', 'data.table', 'zoo','fasttime',"twitteR","openssl","httpuv" , 'rvest', 'httr','jsonlite','lubridate', 'twitteR','magrittr')
 
 package.check <- lapply(packages, FUN = function(x) {
     if (!require(x, character.only = TRUE)) {
@@ -19,8 +19,6 @@ package.check <- lapply(packages, FUN = function(x) {
 
 
 ```
-
-
 
 
 ```{r testing rvest}
@@ -34,18 +32,12 @@ nsmb <- read_html("https://www.nature.com/nsmb/volumes/25/issues/10")
 ```
 
 
-
-
 ```{r}
 
 
 nsmb %>% rvest::html_text()
 
 ```
-
-
-
-
 
 
 ```{r}
@@ -64,10 +56,6 @@ nsmb %>% html_node(paste0(".pb30:nth-child(7) a")) %>% html_text()
 ```
 
 
-
-
-
-
 ```{r}
 
 # testing cleaning up text
@@ -75,9 +63,6 @@ nsmb %>% html_node(paste0(".pb30:nth-child(7) a")) %>% html_text2()
 
 
 ```
-
-
-
 
 
 ```{r }
@@ -110,11 +95,13 @@ subjournal_html_parser(subjournal = "nsmb",volume = 1,issue = 13,child_node = 7)
 
 ```{r }
 # skip errors 
-subjournal_html_parser2 <- possibly(subjournal_html_parser, otherwise = NA)
+nature_html_parser <- purrr::possibly(subjournal_html_parser, otherwise = NA)
 
-subjournal_html_parser2(subjournal = "nsmb",volume = 1,issue = 13,child_node = 7)
+nature_html_parser(subjournal = "nsmb",volume = 1,issue = 13,child_node = 7)
 
 
+# save out nature parser function
+write_rds(nature_html_parser, here::here("2. Data",paste0(params$nb_id,"nature_html_parser.rds")))
 
 ```
 
@@ -141,7 +128,7 @@ bind_rows(test_list)
 #messing around with mapply
 
 tictoc::tic()
-test  <- mapply(subjournal_html_parser2, issue = 1, child_node = 1:12, subjournal = "nsmb",volume = 1) 
+test  <- mapply(nature_html_parser, issue = 1, child_node = 1:12, subjournal = "nsmb",volume = 1) 
 tictoc::toc()
 test2 <- test %>% t() #%>% filter(!is.na(parsed_title))
 
@@ -171,6 +158,11 @@ cmapply <- function(FUN, ..., MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE
 }
 
 
+
+# save out cmapply function
+write_rds(cmapply, here::here("2. Data",paste0(params$nb_id,"cmapply.rds")))
+
+
 ```
 
 
@@ -178,7 +170,7 @@ cmapply <- function(FUN, ..., MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE
 
 # get article
 # it is not as  efficient as I would like but then again I am webscrapping almost 30 years of article titles
-article_combination_list <- cmapply(issue = 1:2, child_node = 1:2, subjournal = "nsmb",volume = 1:2, FUN=subjournal_html_parser2) 
+article_combination_list <- cmapply(issue = 1:2, child_node = 1:2, subjournal = "nsmb",volume = 1:2, FUN=nature_html_parser) 
 
 
 
@@ -205,26 +197,26 @@ journals <- c("nsmb","leu","natcancer","natcardiovascres","nmeth")
 
 ```{r rvest journal code extraction}
 
-# pull in some html
+# pull in some html from the journal index page
+site_index_raw <- read_html("https://www.nature.com/siteindex") 
 
-site_index <- read_html("https://www.nature.com/siteindex") 
+site_index_raw %>% html_nodes("a") %>% html_attr("href")
 
-# remove some crap
-site_index_clean1 <- site_index %>% html_nodes("a") %>% html_attr("href") %>% data.frame() %>%
-               filter(str_detect(.,"#") != T )
-
-# remove a little more 
-site_index_clean2 <- site_index %>% html_nodes("a") %>% html_attr("href") %>% data.frame() %>%
-               filter(str_detect(.,"#|https") != T )
-
-
-# remove most (I think? all)
-site_index_clean3 <- site_index %>% html_nodes("a") %>% html_attr("href") %>% data.frame() %>%
+# clean it up and remove excess
+site_index_clean <- site_index_raw %>% html_nodes("a") %>% html_attr("href") %>% data.frame() %>%
                filter(str_detect(.,"#|https|.com|myaccount|search|search|authors|java|naturecareers|subject") != T ) %>%
                # clean up journal codes
                transmute(journal_code = str_replace_all(.,"/","")) %>%
+               # turn into vector
                filter(journal_code != "")
+
+# vectorize
+journal_code_vector <- site_index_clean3 %$% journal_code
                
+
+
+# save out the journal code vector 
+readr::write_rds(journal_code_vector, here::here("2. Data", paste0(params$nb_id,"_journal_code_vector.rds")))
 
 
 

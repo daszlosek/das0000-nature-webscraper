@@ -203,9 +203,32 @@ journals <- c("nsmb","leu","natcancer","natcardiovascres","nmeth")
 ```
 
 
+```{r rvest journal code extraction}
+
+# pull in some html
+
+site_index <- read_html("https://www.nature.com/siteindex") 
+
+# remove some crap
+site_index_clean1 <- site_index %>% html_nodes("a") %>% html_attr("href") %>% data.frame() %>%
+               filter(str_detect(.,"#") != T )
+
+# remove a little more 
+site_index_clean2 <- site_index %>% html_nodes("a") %>% html_attr("href") %>% data.frame() %>%
+               filter(str_detect(.,"#|https") != T )
+
+
+# remove most (I think? all)
+site_index_clean3 <- site_index %>% html_nodes("a") %>% html_attr("href") %>% data.frame() %>%
+               filter(str_detect(.,"#|https|.com|myaccount|search|search|authors|java|naturecareers|subject") != T ) %>%
+               # clean up journal codes
+               transmute(journal_code = str_replace_all(.,"/","")) %>%
+               filter(journal_code != "")
+               
 
 
 
+```
 
 
 

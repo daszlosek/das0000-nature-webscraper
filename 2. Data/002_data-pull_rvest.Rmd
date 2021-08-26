@@ -1,0 +1,37 @@
+---
+title: "Web Scraper Data Pull"
+output: html_notebook
+params:
+  nb_id: "002"
+---
+
+
+```{r load packages}
+
+packages = c('rmarkdown', 'plyr', 'dplyr','ggplot2', 'readr', 'tidyr', 'stringr',  'knitr', 'sparklyr', 'shiny', 'data.table', 'zoo','fasttime',"twitteR","openssl","httpuv" , 'rvest', 'httr','jsonlite','lubridate', 'twitteR','magrittr')
+
+package.check <- lapply(packages, FUN = function(x) {
+    if (!require(x, character.only = TRUE)) {
+        install.packages(x, dependencies = TRUE)
+        library(x, character.only = TRUE, quietly = TRUE, warn.conflicts = FALSE)
+    }
+})
+
+
+```
+
+
+```{r load poc scripts}
+
+
+nature_html_parser <- read_rds(here::here("2. Data",paste0("001","nature_html_parser.rds")))
+
+
+cmapply <- readr::read_rds(here::here("2. Data", paste0("001","cmapply.rds")))
+
+
+journal_code_vector <- readr::read_rds(here::here("2. Data", paste0("001","_journal_code_vector.rds")))
+
+
+```
+

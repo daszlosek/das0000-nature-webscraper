@@ -52,6 +52,9 @@ nsmb %>% html_node(paste0(".pb30:nth-child(2) a")) %>% html_text()
 nsmb %>% html_node(paste0(".pb30:nth-child(7) a")) %>% html_text()
 
 
+nsmb %>% html_node(paste0("time")) %>% html_text2()
+
+
 ```
 
 
@@ -75,12 +78,15 @@ subjournal_html_parser <- function(subjournal = "nsmb",volume = 1,issue = 1,chil
            
           # parse html text
           parsed_title <- tmp_html %>% html_node(paste0(".pb30:nth-child(",child_node,") a")) %>% html_text2()
+          # tacked on as an afterthought...whoops
+          date <- tmp_html %>% html_node(paste0("time")) %>% html_text2()
           
           bind_cols(
                     # subjournal = subjournal, # removed since it is in mapply
                     # volume = volume,
                     # issue = issue,
                     # child_node = child_node,
+                    date = date,
                     parsed_title = parsed_title) 
 }
 
@@ -144,22 +150,41 @@ test3 <- bind_rows(test2)
 ```{r}
 
 
-# all_comb2 <- expand.grid(issue = 1:3, child_node = 1:2, subjournal = c("nsmb"),volume = 1:2, stringsAsFactors=FALSE)
-# 
-# 
-# vector_output <- do.call(mapply, c(
-#         
-#         list(FUN=nature_html_parser, MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE),all_comb2))
-# 
-# if (is.matrix(vector_output)) vector_output <- t(vector_output)
-# parse_title <- vector_output %>% unlist
-# test <- cbind(all_comb, parse_title) 
-# 
-# test
-# 
-# typeof(test)
-# 
-# article_combination_list <- cmapply(issue = 1:3, child_node = 1:2, subjournal = c("nsmb"),volume = 1:2, FUN=nature_html_parser)
+all_comb2 <- expand.grid(issue = 1:2, child_node = 1:2, subjournal = c("nsmb"),volume = 1:2, stringsAsFactors=FALSE)
+
+all_comb2
+vector_output <- do.call(mapply, c(
+
+        list(FUN=nature_html_parser, MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE),all_comb2))
+
+if (is.matrix(vector_output)) vector_output <- t(vector_output)
+
+vector_output
+
+vector_output %>% data.frame() %>% unlist %>% data.frame() %>%
+              tibble::rownames_to_column(., "name") %>%
+              dplyr::rename("value" = 2) %>%
+              mutate(name = ifelse(str_detect(name,"date"),"date","parsed_title"),
+                     id = row_number()) %>%
+              pivot_wider(., names_from = name, values_from = value)
+
+parse_title <- vector_output %>% unlist %>% data.frame() %>% t()
+parse_title[2]
+strsplit(vector_output,2)
+
+
+test_df <- stringr::str_split(parse_title," ")
+
+test_df
+parse_title
+
+test <- cbind(all_comb2, parse_title)
+
+test
+
+typeof(test)
+
+article_combination_list <- cmapply(issue = 1:3, child_node = 1:2, subjournal = c("nsmb"),volume = 1:2, FUN=nature_html_parser)
 
 ```
 
@@ -199,13 +224,13 @@ write_rds(cmapply, here::here("2. Data",paste0(params$nb_id,"cmapply.rds")))
 
 # get article
 # it is not as  efficient as I would like but then again I am webscrapping almost 30 years of article titles
-article_combination_list <- cmapply(issue = 1:3, child_node = 1:2, subjournal = c("leu"),volume = 1:2, FUN=nature_html_parser)  
+article_combination_list <- cmapply(issue = 1:3, child_node = 1:2, subjournal = c("nsmb"),volume = 1:2, FUN=nature_html_parser)  
 
 
 # article_data_raw <- bind_rows(article_combination_list) %>% janitor::clean_names() %>%
 #                     dplyr::select(issue_1,child_node_2,subjournal_3,volume_4,parsed_title)
 
-
+article_combination_list
 ```
 
 

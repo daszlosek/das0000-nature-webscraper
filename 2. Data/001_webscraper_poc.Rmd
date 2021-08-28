@@ -164,7 +164,7 @@ vector_output
 vct_length <- (length(vector_output)/2)
 
 
-vector_output %>% data.frame() %>% unlist %>% data.frame() %>%
+parse_title <- vector_output %>% data.frame() %>% unlist %>% data.frame() %>%
               tibble::rownames_to_column(., "name") %>%
               dplyr::rename("value" = 2) %>%
               mutate(name = ifelse(str_detect(name,"date"),"date","parsed_title")) %>%
@@ -177,9 +177,7 @@ parse_title
 
 test <- cbind(all_comb2, parse_title)
 
-test
 
-typeof(test)
 
 article_combination_list <- cmapply(issue = 1:3, child_node = 1:2, subjournal = c("nsmb"),volume = 1:2, FUN=nature_html_parser)
 

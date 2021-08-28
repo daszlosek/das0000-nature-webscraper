@@ -161,19 +161,16 @@ if (is.matrix(vector_output)) vector_output <- t(vector_output)
 
 vector_output
 
+vct_length <- (length(vector_output)/2)
+
+
 vector_output %>% data.frame() %>% unlist %>% data.frame() %>%
               tibble::rownames_to_column(., "name") %>%
               dplyr::rename("value" = 2) %>%
-              mutate(name = ifelse(str_detect(name,"date"),"date","parsed_title"),
-                     id = row_number()) %>%
+              mutate(name = ifelse(str_detect(name,"date"),"date","parsed_title")) %>%
+              group_by(name) %>%
+              mutate(id = row_number()) %>% ungroup() %>%
               pivot_wider(., names_from = name, values_from = value)
-
-parse_title <- vector_output %>% unlist %>% data.frame() %>% t()
-parse_title[2]
-strsplit(vector_output,2)
-
-
-test_df <- stringr::str_split(parse_title," ")
 
 test_df
 parse_title

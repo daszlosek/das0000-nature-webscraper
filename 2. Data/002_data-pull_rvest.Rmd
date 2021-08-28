@@ -43,12 +43,21 @@ journal_code_vector
 
 
 ```{r pull article data}
-
 # get article
 # it is not as  efficient as I would like but then again I am webscrapping almost 30 years of article titles
-article_combination_list <- cmapply(issue = 1:2, child_node = 1:2, subjournal = c("nsmb"),volume = 1:2, FUN=nature_html_parser) 
+article_combination_list <- cmapply(issue = 1:50, child_node = 1:15, subjournal = c("nsmb","leu"),volume = 1:50, FUN=nature_html_parser) 
 
 
+article_combination_list
+```
 
+
+```{r pull article data}
+
+
+raw_leu <- article_combination_list %>% filter(subjournal == "leu") %>% filter(!is.na(parse_title))
+
+
+raw_leu %>% group_by(is.na(parse_title)) %>% count()
 
 ```

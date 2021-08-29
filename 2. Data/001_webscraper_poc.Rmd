@@ -114,72 +114,39 @@ write_rds(nature_html_parser, here::here("2. Data",paste0(params$nb_id,"nature_h
 
 
 
-
-```{r}
-
-# messing around with lapply 
+```{r testing arena}
 
 
-tictoc::tic()
-test_list <- lapply(1:2, subjournal_html_parser, subjournal = "nsmb", issue = c(1,2), volume = 1)
-tictoc::toc()
-
-bind_rows(test_list)
-
-
-```
-
-
-
-```{r}
-#messing around with mapply
-
-tictoc::tic()
-test  <- mapply(nature_html_parser, issue = 1, child_node = 1:12, subjournal = "nsmb",volume = 1) 
-tictoc::toc()
-test2 <- test %>% t() #%>% filter(!is.na(parsed_title))
-
-test3 <- bind_rows(test2)
-
-#  according to the help mapply "applies FUN to the first elements of each ... argument, the second elements, the third elements, and so on.". And what I want is to apply FUN to all the different combinations of all the arguments.
-```
-
-
-
-
-```{r}
-
-
-all_comb2 <- expand.grid(issue = 1:2, child_node = 1:2, subjournal = c("nsmb"),volume = 1:2, stringsAsFactors=FALSE)
-
-all_comb2
-vector_output <- do.call(mapply, c(
-
-        list(FUN=nature_html_parser, MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE),all_comb2))
-
-if (is.matrix(vector_output)) vector_output <- t(vector_output)
-
-vector_output
-
-vct_length <- (length(vector_output)/2)
-
-
-parse_title <- vector_output %>% data.frame() %>% unlist %>% data.frame() %>%
-              tibble::rownames_to_column(., "name") %>%
-              dplyr::rename("value" = 2) %>%
-              mutate(name = ifelse(str_detect(name,"date"),"date","parsed_title")) %>%
-              group_by(name) %>%
-              mutate(id = row_number()) %>% ungroup() %>%
-              pivot_wider(., names_from = name, values_from = value)
-
-test_df
-parse_title
-
-test <- cbind(all_comb2, parse_title)
-
-
-
-article_combination_list <- cmapply(issue = 1:3, child_node = 1:2, subjournal = c("nsmb"),volume = 1:2, FUN=nature_html_parser)
+# all_comb2 <- expand.grid(issue = 1:2, child_node = 1:2, subjournal = c("nsmb"),volume = 1:2, stringsAsFactors=FALSE)
+# 
+# all_comb2
+# vector_output <- do.call(mapply, c(
+# 
+#         list(FUN=nature_html_parser, MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE),all_comb2))
+# 
+# if (is.matrix(vector_output)) vector_output <- t(vector_output)
+# 
+# vector_output
+# 
+# vct_length <- (length(vector_output)/2)
+# 
+# 
+# parse_title <- vector_output %>% data.frame() %>% unlist %>% data.frame() %>%
+#               tibble::rownames_to_column(., "name") %>%
+#               dplyr::rename("value" = 2) %>%
+#               mutate(name = ifelse(str_detect(name,"date"),"date","parsed_title")) %>%
+#               group_by(name) %>%
+#               mutate(id = row_number()) %>% ungroup() %>%
+#               pivot_wider(., names_from = name, values_from = value)
+# 
+# test_df
+# parse_title
+# 
+# test <- cbind(all_comb2, parse_title)
+# 
+# test
+# 
+# article_combination_list <- cmapply(issue = 1:3, child_node = 1:2, subjournal = c("nsmb"),volume = 1:2, FUN=nature_html_parser)
 
 ```
 
@@ -189,7 +156,7 @@ article_combination_list <- cmapply(issue = 1:3, child_node = 1:2, subjournal = 
 ```{r}
 
 # expand grid to give all combinations 
-cmapply <- function(FUN, ..., MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE) {
+cmapply_raw <- function(FUN, ..., MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE) {
     # expand grid to prepare the combinations
     all_comb <- expand.grid(..., stringsAsFactors=FALSE)
     # execute mapply on all combinations 
@@ -202,13 +169,28 @@ cmapply <- function(FUN, ..., MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE
     # removed in my version since I already do it above
     #cbind(all_comb, vector_output)
     #vector_output
-    parse_title <- vector_output %>% unlist
-    cbind(all_comb, parse_title) 
+    #parse_title <- vector_output %>% unlist
+    #cbind(all_comb, parse_title)
+    
+vct_length <- (length(vector_output)/2)
+
+# all this work just to add a time stamp.....
+parse_title <- vector_output %>% data.frame() %>% unlist %>% data.frame() %>%
+              tibble::rownames_to_column(., "name") %>%
+              dplyr::rename("value" = 2) %>%
+              mutate(name = ifelse(str_detect(name,"date"),"date","parsed_title")) %>%
+              group_by(name) %>%
+              mutate(id = row_number()) %>% ungroup() %>%
+              pivot_wider(., names_from = name, values_from = value)
+
+cbind(all_comb, parse_title)
 }
 
 
 
-# save out cmapply function
+cmapply <- purrr::possibly(cmapply_raw, otherwise = NA)
+
+# # save out cmapply function
 write_rds(cmapply, here::here("2. Data",paste0(params$nb_id,"cmapply.rds")))
 
 
@@ -219,11 +201,7 @@ write_rds(cmapply, here::here("2. Data",paste0(params$nb_id,"cmapply.rds")))
 
 # get article
 # it is not as  efficient as I would like but then again I am webscrapping almost 30 years of article titles
-article_combination_list <- cmapply(issue = 1:3, child_node = 1:2, subjournal = c("nsmb"),volume = 1:2, FUN=nature_html_parser)  
-
-
-# article_data_raw <- bind_rows(article_combination_list) %>% janitor::clean_names() %>%
-#                     dplyr::select(issue_1,child_node_2,subjournal_3,volume_4,parsed_title)
+article_combination_list <- cmapply(issue = 1:3, child_node = 1:2, subjournal = c("nsmb","leu"),volume = 12:13, FUN=nature_html_parser)  
 
 article_combination_list
 ```

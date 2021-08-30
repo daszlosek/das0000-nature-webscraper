@@ -52,7 +52,7 @@ article_combination_list
 ```
 
 
-```{r pull article data}
+```{r messing around}
 
 
 raw_leu <- article_combination_list %>% filter(subjournal == "leu") %>% filter(!is.na(parse_title))

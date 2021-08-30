@@ -113,46 +113,6 @@ write_rds(nature_html_parser, here::here("2. Data",paste0(params$nb_id,"nature_h
 ```
 
 
-
-```{r testing arena}
-
-
-# all_comb2 <- expand.grid(issue = 1:2, child_node = 1:2, subjournal = c("nsmb"),volume = 1:2, stringsAsFactors=FALSE)
-# 
-# all_comb2
-# vector_output <- do.call(mapply, c(
-# 
-#         list(FUN=nature_html_parser, MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE),all_comb2))
-# 
-# if (is.matrix(vector_output)) vector_output <- t(vector_output)
-# 
-# vector_output
-# 
-# vct_length <- (length(vector_output)/2)
-# 
-# 
-# parse_title <- vector_output %>% data.frame() %>% unlist %>% data.frame() %>%
-#               tibble::rownames_to_column(., "name") %>%
-#               dplyr::rename("value" = 2) %>%
-#               mutate(name = ifelse(str_detect(name,"date"),"date","parsed_title")) %>%
-#               group_by(name) %>%
-#               mutate(id = row_number()) %>% ungroup() %>%
-#               pivot_wider(., names_from = name, values_from = value)
-# 
-# test_df
-# parse_title
-# 
-# test <- cbind(all_comb2, parse_title)
-# 
-# test
-# 
-# article_combination_list <- cmapply(issue = 1:3, child_node = 1:2, subjournal = c("nsmb"),volume = 1:2, FUN=nature_html_parser)
-
-```
-
-
-
-
 ```{r}
 
 # expand grid to give all combinations 
@@ -165,13 +125,8 @@ cmapply_raw <- function(FUN, ..., MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = 
         list(FUN=FUN, MoreArgs = MoreArgs, SIMPLIFY = SIMPLIFY, USE.NAMES = USE.NAMES),all_comb))
     # transpose matrix
     if (is.matrix(vector_output)) vector_output <- t(vector_output) 
-    # combined output to initial combination
-    # removed in my version since I already do it above
-    #cbind(all_comb, vector_output)
-    #vector_output
-    #parse_title <- vector_output %>% unlist
-    #cbind(all_comb, parse_title)
-    
+
+# vector length divided by two due to title and date, to give two columns one for date and one for title
 vct_length <- (length(vector_output)/2)
 
 # all this work just to add a time stamp.....
@@ -206,21 +161,6 @@ article_combination_list <- cmapply(issue = 1:3, child_node = 1:2, subjournal = 
 article_combination_list
 ```
 
-
-
-
-
-```{r}
-
-
-#list out some of the articles
-journals <- c("nsmb","leu","natcancer","natcardiovascres","nmeth")
-
-
-
-```
-
-
 ```{r rvest journal code extraction}
 
 # pull in some html from the journal index page
@@ -235,16 +175,11 @@ site_index_clean <- site_index_raw %>% html_nodes("a") %>% html_attr("href") %>%
                transmute(journal_code = str_replace_all(.,"/","")) %>%
                # turn into vector
                filter(journal_code != "")
-
-# vectorize
+# vector
 journal_code_vector <- site_index_clean3 %$% journal_code
                
-
-
 # save out the journal code vector 
 readr::write_rds(journal_code_vector, here::here("2. Data", paste0(params$nb_id,"_journal_code_vector.rds")))
-
-
 
 ```
 

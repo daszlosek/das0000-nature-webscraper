@@ -20,6 +20,13 @@ package.check <- lapply(packages, FUN = function(x) {
 
 ```
 
+```{r}
+
+read_html("https://www.nature.com/nsmb/volumes/25/issues/10") 
+
+```
+
+
 
 ```{r testing rvest}
 
@@ -27,6 +34,8 @@ package.check <- lapply(packages, FUN = function(x) {
 
 nsmb <- read_html("https://www.nature.com/nsmb/volumes/25/issues/10") 
 
+
+nsmb
 # https://www.nature.com/nsmb/volumes/25/issues/10
 
 ```
@@ -34,9 +43,11 @@ nsmb <- read_html("https://www.nature.com/nsmb/volumes/25/issues/10")
 
 ```{r}
 
-
+?rvest::read_html()
 nsmb %>% rvest::html_text()
 
+
+?rvest::html_text()
 ```
 
 

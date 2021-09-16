@@ -41,15 +41,6 @@ nsmb
 ```
 
 
-```{r}
-
-?rvest::read_html()
-nsmb %>% rvest::html_text()
-
-
-?rvest::html_text()
-```
-
 
 ```{r}
 

@@ -33,8 +33,12 @@ cmapply <- readr::read_rds(here::here("2. Data", paste0("001","cmapply.rds")))
 journal_code_vector <- readr::read_rds(here::here("2. Data", paste0("001","_journal_code_vector.rds")))
 
 
-journal_code_vector
 
+journal_code_vector <- journal_code_vector[journal_code_vector!="nsmb"]
+journal_code_vector <- journal_code_vector[journal_code_vector!="nataging"]
+journal_code_vector <- journal_code_vector[journal_code_vector!="natastron"]
+
+journal_code_vector <- c("ncb","nchem","ngeo","ni","nm","nmeth","nnano","nphoton","nplants")
 ```
 
 
@@ -43,19 +47,63 @@ journal_code_vector
 
 
 ```{r pull article data}
+tictoc::tic()
 # get article
 # it is not as  efficient as I would like but then again I am webscrapping almost 30 years of article titles
-article_combination_list <- cmapply(issue = 1:50, child_node = 1:15, subjournal = c("nsmb","leu"),volume = 1:50, FUN=nature_html_parser) 
+article_combination_list <- cmapply(issue = 1:12, child_node = 1:15, subjournal = "natastron",volume = 1:50, FUN=nature_html_parser) 
 
 
-article_combination_list
+tictoc::toc()
+
+# c(5421.13,5193.33 )
+
 ```
+
+
+```{r }
+article_combination_list
+
+nature_html_parser(subjournal = "nsmb",volume = ,issue = 12,child_node = 7)
+
+
+```
+
+```{r}
+
+write_rds(article_combination_list, here::here("2. Data",paste0(params$nb_id,"_natastron.rds")))
+
+
+#   closing unused connection 3 (https://www.nature.com/nprot/volumes/27/issues/7) 314 on 9/28
+
+```
+
+
+
+```{r}
+
+# journal_code_vector
+
+
+for (variable in journal_code_vector) {
+  
+  
+article_list <- cmapply(issue = 1:12, child_node = 1:15, subjournal = {{variable}},volume = 1:50, FUN=nature_html_parser) 
+
+write_rds(article_list, here::here("2. Data",paste0(params$nb_id,"_",variable,".rds")))
+
+
+}
+
+
+
+```
+
 
 
 ```{r messing around}
 
 
-raw_leu <- article_combination_list %>% filter(subjournal == "leu") %>% filter(!is.na(parse_title))
+raw_leu <- article_combination_list %>% filter(subjournal == "leu") %>% filter(!is.na(parsed_title))
 
 
 raw_leu %>% group_by(is.na(parse_title)) %>% count()

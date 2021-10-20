@@ -16,7 +16,7 @@ package.check <- lapply(packages, FUN = function(x) {
         library(x, character.only = TRUE, quietly = TRUE, warn.conflicts = FALSE)
     }
 })
-
+library("rvest")
 
 ```
 
@@ -38,6 +38,8 @@ nsmb <- read_html("https://www.nature.com/nsmb/volumes/25/issues/10")
 nsmb
 # https://www.nature.com/nsmb/volumes/25/issues/10
 
+
+rvest::html_text
 ```
 
 
@@ -54,7 +56,7 @@ nsmb %>% html_node(paste0(".pb30:nth-child(2) a")) %>% html_text()
 nsmb %>% html_node(paste0(".pb30:nth-child(7) a")) %>% html_text()
 
 
-nsmb %>% html_node(paste0("time")) %>% html_text2()
+nsmb %>% html_node(paste0("time")) %>% html_text()
 
 
 ```
@@ -63,7 +65,7 @@ nsmb %>% html_node(paste0("time")) %>% html_text2()
 ```{r}
 
 # testing cleaning up text
-nsmb %>% html_node(paste0(".pb30:nth-child(7) a")) %>% html_text2()
+nsmb %>% html_node(paste0(".pb30:nth-child(7) a")) %>% html_text(.,trim = T)
 
 
 ```
@@ -79,9 +81,9 @@ subjournal_html_parser <- function(subjournal = "nsmb",volume = 1,issue = 1,chil
           
            
           # parse html text
-          parsed_title <- tmp_html %>% html_node(paste0(".pb30:nth-child(",child_node,") a")) %>% html_text2()
+          parsed_title <- tmp_html %>% html_node(paste0(".pb30:nth-child(",child_node,") a")) %>% html_text(.,trim = T)
           # tacked on as an afterthought...whoops
-          date <- tmp_html %>% html_node(paste0("time")) %>% html_text2()
+          date <- tmp_html %>% html_node(paste0("time")) %>% html_text(.,trim = T)
           
           bind_cols(
                     # subjournal = subjournal, # removed since it is in mapply
@@ -177,9 +179,18 @@ site_index_clean <- site_index_raw %>% html_nodes("a") %>% html_attr("href") %>%
                transmute(journal_code = str_replace_all(.,"/","")) %>%
                # turn into vector
                filter(journal_code != "")
+
+
+# other journals of interest
+other_journal_codes <- c("nchembio", "nclimate", "natcomputsci", "nenergy", "ng", "nathumbehav", "nmat", "natmetab", "nmicrobiol", "neuro", "nphys", "nprot", "natsustain", "natastron", "nbt", "natcardiovascres", "ncb", "nchem", "natelectron", "ngeo", "ni", "natmachintell", "nm", "nmeth", "nnano", "nphoton", "nplants", "nsmb", "natsynth")
+
 # vector
-journal_code_vector <- site_index_clean3 %$% journal_code
-               
+journal_code_vector <- site_index_clean %>% 
+           filter(str_detect(journal_code,"nat"),
+                  str_detect(journal_code,"italy|africa|rev|nature") != T) %$%
+           journal_code %>% c(.,other_journal_codes) %>% unique()
+           
+
 # save out the journal code vector 
 readr::write_rds(journal_code_vector, here::here("2. Data", paste0(params$nb_id,"_journal_code_vector.rds")))
 

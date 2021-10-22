@@ -1,0 +1,130 @@
+---
+title: "Web Scraper Data Pull"
+output: html_notebook
+params:
+  nb_id: "003"
+---
+
+
+```{r load packages}
+
+packages = c('rmarkdown', 'plyr', 'dplyr','ggplot2', 'readr', 'tidyr', 'stringr',  'knitr', 'sparklyr', 'shiny', 'data.table', 'zoo','fasttime',"twitteR","openssl","httpuv" , 'rvest', 'httr','jsonlite','lubridate', 'twitteR','magrittr')
+
+package.check <- lapply(packages, FUN = function(x) {
+    if (!require(x, character.only = TRUE)) {
+        install.packages(x, dependencies = TRUE)
+        library(x, character.only = TRUE, quietly = TRUE, warn.conflicts = FALSE)
+    }
+})
+
+library(tidyverse)
+library("ngram")
+
+```
+
+
+
+```{r}
+
+raw_data <- read_rds(here::here("2. Data",paste0("002","_parsed-articles.rds"))) %>%
+            rowwise() %>%
+            mutate(date = format(as.Date(date, format = " %d %B %y"), "%m/%d/%Y"),
+                   date = mdy(date),
+                   month = month(date),
+                   year  = year(date),
+                   journal_title = case_when(
+                      subjournal == "nataging" ~ "Nature Aging",
+                      subjournal == "natastron" ~ "Nature Astronomy",
+                      subjournal == "ncb" ~ "Nature Cell Biology",
+                      subjournal == "nchem" ~ "Nature Chemistry",
+                      subjournal == "ngeo" ~ "Nature Geoscience",
+                      subjournal == "ni" ~ "Nature Immunology",
+                      subjournal == "nm" ~ "Nature Medicine",
+                      subjournal == "nmeth" ~ "Nature Methodology",
+                      subjournal == "nnano" ~ "Nature Nanotechnology",
+                      subjournal == "nphoton" ~ "Nature Photonics",
+                      subjournal == "nplants" ~ "Nature Plants",
+                      subjournal == "nsmb" ~ "Nature Structure and Molecular Biology"),
+                   string_count = nchar(parsed_title),
+                   ngram = wordcount(parsed_title)) %>% distinct() %>%
+            filter(parsed_title != "")
+
+
+write_rds(raw_data, here::here("3. Analysis",paste0(params$nb_id,"_cleaned_df.rds")))
+
+cleaned_df <- read_rds(here::here("3. Analysis",paste0(params$nb_id,"_cleaned_df.rds")))
+
+
+```
+
+
+
+
+
+```{r}
+
+
+ggplot(raw_data, aes(x = string_count, group = journal_title, color = journal_title)) +
+       geom_density() +
+       scale_y_continuous("Density", expand = c(0,0)) +
+       scale_x_continuous("Character Count", expand = c(0,0)) +
+       theme_bw() +
+       theme(legend.title = element_blank())
+
+
+
+ggplot(raw_data, aes(x = ngram, group = journal_title, color = journal_title)) +
+       geom_density() +
+       scale_y_continuous("Density", expand = c(0,0)) +
+       scale_x_continuous("Word Count", expand = c(0,0)) +
+       theme_bw() +
+       theme(legend.title = element_blank())
+
+
+```
+
+
+
+```{r}
+ggplot(raw_data, aes(x = journal_title, y = string_count, 
+                     group = journal_title, color = journal_title)) +
+       geom_boxplot(outlier.shape = NA) +
+       #geom_jitter() + 
+       scale_y_continuous("Density", expand = c(0,0)) +
+       #scale_x_continuous("Character Count", expand = c(0,0)) +
+       theme_bw() +
+       theme(legend.title = element_blank(),
+             axis.text.x = element_text(angle = 45, hjust = 1.0,vjust = 1.0))
+```
+
+
+```{r}
+
+
+ggplot(raw_data %>% filter(ngram > 3), aes(x = fct_reorder(journal_title, ngram), y = ngram, 
+                     group = journal_title, color = journal_title)) +
+       geom_boxplot(outlier.shape = NA, width = 0.5) +
+       #geom_jitter() + 
+       scale_y_continuous("Density", expand = c(0,0), limits = c(0,30)) +
+       scale_x_discrete("Word Count", expand = c(0.1,0)) +
+       theme_bw() +
+       theme(legend.title = element_blank(),
+             legend.position = "none",
+             axis.text.x = element_text(angle = 45, hjust = 1.0,vjust = 1.0))
+
+
+```
+
+
+
+
+```{r}
+
+
+cleaned_df %>% ungroup() %>% group_by(journal_title) %>% summarise(median = ngram)
+
+
+```
+
+
+

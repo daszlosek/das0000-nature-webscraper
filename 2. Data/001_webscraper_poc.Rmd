@@ -39,14 +39,14 @@ nsmb
 # https://www.nature.com/nsmb/volumes/25/issues/10
 
 
-rvest::html_text
 ```
 
 
 
 ```{r}
 
-nsmb %>% html_node(paste0(".pb30:nth-child(1) a")) %>% html_text()
+read_html("https://www.nature.com/nsmb/volumes/25/issues/10") %>% 
+          html_node(paste0(".pb30:nth-child(1) a")) %>% html_text()
 
 
 nsmb %>% html_node(paste0(".pb30:nth-child(2) a")) %>% html_text()
@@ -65,36 +65,31 @@ nsmb %>% html_node(paste0("time")) %>% html_text()
 ```{r}
 
 # testing cleaning up text
-nsmb %>% html_node(paste0(".pb30:nth-child(7) a")) %>% html_text(.,trim = T)
+nsmb %>% html_node(paste0(".pb30:nth-child(1) a")) %>% html_text(.,trim = T)
 
 
 ```
 
 
 ```{r }
-#function to pull out subjournal, volume and issue information
-
-subjournal <- "nsmb"
+#function to pull out sub journal, volume and issue information
 
 subjournal_html_parser <- function(subjournal = "nsmb",volume = 1,issue = 1,child_node = 1) {
           tmp_html <- read_html(paste0("https://www.nature.com/",subjournal,"/volumes/",volume,"/issues/",issue))
           
-           
           # parse html text
           parsed_title <- tmp_html %>% html_node(paste0(".pb30:nth-child(",child_node,") a")) %>% html_text(.,trim = T)
           # tacked on as an afterthought...whoops
           date <- tmp_html %>% html_node(paste0("time")) %>% html_text(.,trim = T)
           
           bind_cols(
-                    # subjournal = subjournal, # removed since it is in mapply
-                    # volume = volume,
-                    # issue = issue,
-                    # child_node = child_node,
                     date = date,
                     parsed_title = parsed_title) 
 }
+```
 
 
+```{r }
 subjournal_html_parser(subjournal = "nsmb",volume = 1,issue = 12,child_node = 7)
 
 subjournal_html_parser(subjournal = "nsmb",volume = 1,issue = 13,child_node = 7)
@@ -112,7 +107,7 @@ nature_html_parser(subjournal = "nsmb",volume = 1,issue = 13,child_node = 7)
 nature_html_parser(subjournal = "nsmb",volume = 1,issue = 12,child_node = 7)
 
 # save out nature parser function
-write_rds(nature_html_parser, here::here("2. Data",paste0(params$nb_id,"nature_html_parser.rds")))
+write_rds(nature_html_parser, here::here("2. Data",paste0(params$nb_id,"_nature_html_parser.rds")))
 
 ```
 
@@ -150,7 +145,7 @@ cbind(all_comb, parse_title)
 cmapply <- purrr::possibly(cmapply_raw, otherwise = NA)
 
 # # save out cmapply function
-write_rds(cmapply, here::here("2. Data",paste0(params$nb_id,"cmapply.rds")))
+write_rds(cmapply, here::here("2. Data",paste0(params$nb_id,"_cmapply.rds")))
 
 
 ```
@@ -180,7 +175,7 @@ site_index_clean <- site_index_raw %>% html_nodes("a") %>% html_attr("href") %>%
                # turn into vector
                filter(journal_code != "")
 
-
+site_index_clean
 # other journals of interest
 other_journal_codes <- c("nchembio", "nclimate", "natcomputsci", "nenergy", "ng", "nathumbehav", "nmat", "natmetab", "nmicrobiol", "neuro", "nphys", "nprot", "natsustain", "natastron", "nbt", "natcardiovascres", "ncb", "nchem", "natelectron", "ngeo", "ni", "natmachintell", "nm", "nmeth", "nnano", "nphoton", "nplants", "nsmb", "natsynth")
 

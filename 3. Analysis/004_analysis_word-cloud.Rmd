@@ -1,0 +1,116 @@
+---
+title: "Web Scraper Data Pull"
+output: html_notebook
+params:
+  nb_id: "004"
+---
+
+
+```{r load packages}
+
+packages = c('rmarkdown', 'plyr', 'dplyr','ggplot2', 'readr', 'tidyr', 'stringr',  'knitr', 'sparklyr', 'shiny', 'data.table', 'zoo','fasttime',"twitteR","openssl","httpuv" , 'rvest', 'httr','jsonlite','lubridate', 'twitteR','magrittr')
+
+package.check <- lapply(packages, FUN = function(x) {
+    if (!require(x, character.only = TRUE)) {
+        install.packages(x, dependencies = TRUE)
+        library(x, character.only = TRUE, quietly = TRUE, warn.conflicts = FALSE)
+    }
+})
+
+library(tidyverse)
+library("ngram")
+
+library("rquery")
+
+
+```
+
+
+
+```{r}
+
+cleaned_df <- read_rds(here::here("3. Analysis",paste0("003","_cleaned_df.rds")))
+
+```
+
+```{r}
+
+res<-rquery.wordcloud(filePath, type ="file", lang = "english")
+
+```
+
+```{r}
+
+astronomy <- cleaned_df %>% filter(subjournal == "natastron")
+
+library(RColorBrewer)
+library(wordcloud2)
+library(tm)
+#Create a vector containing only the text
+text <- astronomy$parsed_title
+# Create a corpus  
+docs <- Corpus(VectorSource(text))
+
+docs <- docs %>%
+  tm_map(removeNumbers) %>%
+  tm_map(removePunctuation) %>%
+  tm_map(stripWhitespace)
+docs <- tm_map(docs, content_transformer(tolower))
+docs <- tm_map(docs, removeWords, stopwords("english"))
+
+dtm <- TermDocumentMatrix(docs) 
+matrix <- as.matrix(dtm) 
+words <- sort(rowSums(matrix),decreasing=TRUE) 
+df <- data.frame(word = names(words),freq=words)
+
+
+
+set.seed(1234) # for reproducibility 
+wordcloud::wordcloud(words = df$word, freq = df$freq, min.freq = 1,           
+          max.words=200, random.order=FALSE, rot.per=0.35)
+
+wordcloud::wordcloud(words = df$word, freq = df$freq, min.freq = 1,           
+          max.words=200, random.order=FALSE, rot.per=0.35,            
+          colors=brewer.pal(8, "Dark2"))
+
+```
+
+
+
+```{r}
+
+
+library(wordcloud2)
+wordcloud2(data = demoFreq,figPath = here::here("3. Analysis", "twitter.jpg"))
+
+
+wordcloud2::wordcloud2(data = demoFreq,
+           figPath = "C:\\Users\\donal\\Documents\\Projects\\DAS0000 - nature webscraper\\3. Analysis\\twitter.jpg")
+```
+
+
+
+
+
+```{r}
+
+
+wordcloud2(df, size = 1,shape = 'star', minSize = 30)
+
+
+
+
+```
+
+
+
+
+```{r}
+
+
+wordcloud2(df, size = 2, minRotation = -pi/6, 
+           maxRotation = -pi/6, rotateRatio = 1)
+
+
+```
+

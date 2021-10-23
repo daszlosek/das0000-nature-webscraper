@@ -52,7 +52,7 @@ raw_data <- read_rds(here::here("2. Data",paste0("002","_parsed-articles.rds")))
 
 write_rds(raw_data, here::here("3. Analysis",paste0(params$nb_id,"_cleaned_df.rds")))
 
-cleaned_df <- read_rds(here::here("3. Analysis",paste0(params$nb_id,"_cleaned_df.rds")))
+raw_data <- read_rds(here::here("3. Analysis",paste0(params$nb_id,"_cleaned_df.rds")))
 
 
 ```
@@ -62,18 +62,18 @@ cleaned_df <- read_rds(here::here("3. Analysis",paste0(params$nb_id,"_cleaned_df
 
 
 ```{r}
-
-
 ggplot(raw_data, aes(x = string_count, group = journal_title, color = journal_title)) +
        geom_density() +
        scale_y_continuous("Density", expand = c(0,0)) +
        scale_x_continuous("Character Count", expand = c(0,0)) +
        theme_bw() +
        theme(legend.title = element_blank())
+```
 
 
+```{r word count density}
 
-ggplot(raw_data, aes(x = ngram, group = journal_title, color = journal_title)) +
+ngram_density <- ggplot(raw_data, aes(x = ngram, group = journal_title, color = journal_title)) +
        geom_density() +
        scale_y_continuous("Density", expand = c(0,0)) +
        scale_x_continuous("Word Count", expand = c(0,0)) +
@@ -81,21 +81,54 @@ ggplot(raw_data, aes(x = ngram, group = journal_title, color = journal_title)) +
        theme(legend.title = element_blank())
 
 
+ngram_density
+
+ggsave(ngram_density,
+       filename = here::here("3. Analysis","images",paste0(params$nb_id,"_ngram_density_plot.png")),
+       dpi = 600, device = "png",height = 5, width = 9)
+
+
+
+
 ```
 
 
 
-```{r}
-ggplot(raw_data, aes(x = journal_title, y = string_count, 
-                     group = journal_title, color = journal_title)) +
-       geom_boxplot(outlier.shape = NA) +
-       #geom_jitter() + 
+
+```{r word count density high }
+
+ngram_density_high <- ggplot(raw_data, aes(x = ngram, group = journal_title, color = journal_title)) +
+       geom_density() +
        scale_y_continuous("Density", expand = c(0,0)) +
-       #scale_x_continuous("Character Count", expand = c(0,0)) +
+       scale_x_continuous("Word Count", expand = c(0,0)) +
+       scale_color_manual(values = c(rep("lightgrey",11),"#FF64B0")) + 
        theme_bw() +
-       theme(legend.title = element_blank(),
-             axis.text.x = element_text(angle = 45, hjust = 1.0,vjust = 1.0))
+       theme(legend.title = element_blank())
+
+ngram_density_high
+
+ggsave(ngram_density_high,
+       filename = here::here("3. Analysis","images",paste0(params$nb_id,"_ngram_density-high_plot.png")),
+       dpi = 600, device = "png",height = 5, width = 9)
+
+ngram_density_low <- ggplot(raw_data, aes(x = ngram, group = journal_title, color = journal_title)) +
+       geom_density() +
+       scale_y_continuous("Density", expand = c(0,0)) +
+       scale_x_continuous("Word Count", expand = c(0,0)) +
+       scale_color_manual(values = c(rep("lightgrey",9),"#C77CFF",rep("lightgrey",2))) + 
+       theme_bw() +
+       theme(legend.title = element_blank())
+
+ngram_density_low
+
+ggsave(ngram_density_low,
+       filename = here::here("3. Analysis","images",paste0(params$nb_id,"_ngram_density-low_plot.png")),
+       dpi = 600, device = "png",height = 5, width = 9)
+
 ```
+
+
+
 
 
 ```{r}
@@ -115,16 +148,6 @@ ggplot(raw_data %>% filter(ngram > 3), aes(x = fct_reorder(journal_title, ngram)
 
 ```
 
-
-
-
-```{r}
-
-
-cleaned_df %>% ungroup() %>% group_by(journal_title) %>% summarise(median = ngram)
-
-
-```
 
 
 

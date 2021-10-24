@@ -96,7 +96,7 @@ ggsave(ngram_density,
 
 
 ```{r word count density high }
-
+# plot high low but seeing some funky distributions
 ngram_density_high <- ggplot(raw_data, aes(x = ngram, group = journal_title, color = journal_title)) +
        geom_density() +
        scale_y_continuous("Density", expand = c(0,0)) +
